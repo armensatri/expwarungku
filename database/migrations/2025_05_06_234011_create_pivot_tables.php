@@ -6,22 +6,49 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
-    {
-        Schema::create('pivot_tables', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
-    }
+  public function up(): void
+  {
+    Schema::create('role_has_menu', function (Blueprint $table) {
+      $table->id();
+      $table->foreignId('role_id')
+        ->constrained('roles')
+        ->cascadeOnDelete()
+        ->cascadeOnUpdate();
+      $table->foreignId('menu_id')
+        ->constrained('menus')
+        ->cascadeOnDelete()
+        ->cascadeOnUpdate();
+    });
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('pivot_tables');
-    }
+    Schema::create('role_has_submenu', function (Blueprint $table) {
+      $table->id();
+      $table->foreignId('role_id')
+        ->constrained('roles')
+        ->cascadeOnDelete()
+        ->cascadeOnUpdate();
+      $table->foreignId('submenu_id')
+        ->constrained('submenus')
+        ->cascadeOnDelete()
+        ->cascadeOnUpdate();
+    });
+
+    Schema::create('role_has_permission', function (Blueprint $table) {
+      $table->id();
+      $table->foreignId('role_id')
+        ->constrained('roles')
+        ->cascadeOnDelete()
+        ->cascadeOnUpdate();
+      $table->foreignId('permission_id')
+        ->constrained('permissions')
+        ->cascadeOnDelete()
+        ->cascadeOnUpdate();
+    });
+  }
+
+  public function down(): void
+  {
+    Schema::dropIfExists('role_has_menu');
+    Schema::dropIfExists('role_has_submenu');
+    Schema::dropIfExists('role_has_permission');
+  }
 };

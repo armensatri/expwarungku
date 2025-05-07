@@ -6,22 +6,39 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
-    {
-        Schema::create('managemenu_tables', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
-    }
+  public function up(): void
+  {
+    Schema::create('menus', function (Blueprint $table) {
+      $table->id();
+      $table->integer('sm');
+      $table->string('name')->unique();
+      $table->string('slug')->unique();
+      $table->text('description')->nullable();
+      $table->string('url', 5)->unique();
+      $table->timestamps();
+    });
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('managemenu_tables');
-    }
+    Schema::create('submenus', function (Blueprint $table) {
+      $table->id();
+      $table->foreignId('menu_id')
+        ->constrained('menus')
+        ->cascadeOnDelete()
+        ->cascadeOnUpdate();
+      $table->integer('ssm');
+      $table->string('name')->unique();
+      $table->string('slug')->unique();
+      $table->string('route')->nullable();
+      $table->string('active')->nullable();
+      $table->string('routename')->nullable();
+      $table->text('description')->nullable();
+      $table->string('url', 5)->unique();
+      $table->timestamps();
+    });
+  }
+
+  public function down(): void
+  {
+    Schema::dropIfExists('menus');
+    Schema::dropIfExists('submenus');
+  }
 };

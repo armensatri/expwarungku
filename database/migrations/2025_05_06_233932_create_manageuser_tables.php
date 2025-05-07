@@ -6,22 +6,51 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
-    {
-        Schema::create('manageuser_tables', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
-    }
+  public function up(): void
+  {
+    Schema::create('users', function (Blueprint $table) {
+      $table->id();
+      $table->string('name');
+      $table->string('username')->unique();
+      $table->string('email')->unique();
+      $table->string('password');
+      $table->string('image')->nullable();
+      $table->foreignId('role_id')
+        ->constrained('roles')
+        ->cascadeOnDelete()
+        ->cascadeOnUpdate();
+      $table->boolean('status')->default(0);
+      $table->string('url', 5)->unique();
+      $table->timestamps();
+    });
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('manageuser_tables');
-    }
+    Schema::create('roles', function (Blueprint $table) {
+      $table->id();
+      $table->integer('sr');
+      $table->string('name')->unique();
+      $table->string('slug')->unique();
+      $table->string('bg');
+      $table->string('text');
+      $table->text('description')->nullable();
+      $table->string('guard_name')->default('web');
+      $table->string('url', 5)->unique();
+      $table->timestamps();
+    });
+
+    Schema::create('permissions', function (Blueprint $table) {
+      $table->id();
+      $table->string('name')->unique();
+      $table->string('slug')->unique();
+      $table->string('guard_name')->default('web');
+      $table->string('url', 5)->unique();
+      $table->timestamps();
+    });
+  }
+
+  public function down(): void
+  {
+    Schema::dropIfExists('users');
+    Schema::dropIfExists('roles');
+    Schema::dropIfExists('permissions');
+  }
 };
