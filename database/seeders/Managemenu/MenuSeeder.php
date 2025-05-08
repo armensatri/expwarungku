@@ -2,16 +2,73 @@
 
 namespace Database\Seeders\Managemenu;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Managemenu\Menu;
 
 class MenuSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
-    {
-        //
+  public function run(): void
+  {
+    $menus = [
+      [
+        'sm' => 1,
+        'name' => 'owner',
+        'slug' => 'owner',
+        'description' => 'menu owner'
+      ],
+
+      [
+        'sm' => 2,
+        'name' => 'superadmin',
+        'slug' => 'superadmin',
+        'description' => 'menu superadmin'
+      ],
+
+      [
+        'sm' => 3,
+        'name' => 'admin',
+        'slug' => 'admin',
+        'description' => 'menu admin'
+      ],
+
+      [
+        'sm' => 4,
+        'name' => 'member',
+        'slug' => 'member',
+        'description' => 'menu member'
+      ],
+
+      [
+        'sm' => 5,
+        'name' => 'account',
+        'slug' => 'account',
+        'description' => 'menu account user'
+      ],
+
+      [
+        'sm' => 6,
+        'name' => 'managedata',
+        'slug' => 'managedata',
+        'description' => 'menu pengelolaan data'
+      ],
+
+      [
+        'sm' => 7,
+        'name' => 'manageuser',
+        'slug' => 'manageuser',
+        'description' => 'menu pengelolaan user'
+      ],
+
+      [
+        'sm' => 8,
+        'name' => 'managemenu',
+        'slug' => 'managemenu',
+        'description' => 'menu pengelolaan access menu'
+      ],
+    ];
+
+    foreach ($menus as $menu) {
+      Menu::create($menu);
     }
+  }
 }

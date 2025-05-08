@@ -9,35 +9,35 @@ importers:
   .:
     dependencies:
       alpinejs:
-        specifier: ^3.14.9
+        specifier: 3.14.9
         version: 3.14.9
       flowbite:
-        specifier: ^3.1.2
+        specifier: 3.1.2
         version: 3.1.2(rollup@4.40.2)
       preline:
-        specifier: ^3.0.1
-        version: 3.0.1
+        specifier: 2.7.0
+        version: 2.7.0
     devDependencies:
       autoprefixer:
-        specifier: ^10.4.20
+        specifier: ^10.4.21
         version: 10.4.21(postcss@8.5.3)
       axios:
-        specifier: ^1.7.4
+        specifier: ^1.9.0
         version: 1.9.0
       concurrently:
-        specifier: ^9.0.1
+        specifier: ^9.1.2
         version: 9.1.2
       laravel-vite-plugin:
         specifier: ^1.2.0
         version: 1.2.0(vite@6.3.5(jiti@1.21.7)(yaml@2.7.1))
       postcss:
-        specifier: ^8.4.47
+        specifier: ^8.5.3
         version: 8.5.3
       tailwindcss:
-        specifier: ^3.4.13
+        specifier: ^3.4.17
         version: 3.4.17
       vite:
-        specifier: ^6.0.11
+        specifier: ^6.3.5
         version: 6.3.5(jiti@1.21.7)(yaml@2.7.1)
 
 packages:
@@ -195,15 +195,6 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
-
-  '@floating-ui/core@1.7.0':
-    resolution: {integrity: sha512-FRdBLykrPPA6P76GGGqlex/e7fbe0F1ykgxHYNXQsH/iTEtjMj/f9bpY5oQqbjt5VgZvgz/uKXbGuROijh3VLA==}
-
-  '@floating-ui/dom@1.7.0':
-    resolution: {integrity: sha512-lGTor4VlXcesUMh1cupTUTDoCxMb0V6bm3CnxHzQcw8Eaf1jQbgQX4i02fYgT0vJ82tb5MZ4CZk1LRGkktJCzg==}
-
-  '@floating-ui/utils@0.2.9':
-    resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -510,8 +501,8 @@ packages:
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  electron-to-chromium@1.5.150:
-    resolution: {integrity: sha512-rOOkP2ZUMx1yL4fCxXQKDHQ8ZXwisb2OycOQVKHgvB3ZI4CvehOd4y2tfnnLDieJ3Zs1RL1Dlp3cMkyIn7nnXA==}
+  electron-to-chromium@1.5.151:
+    resolution: {integrity: sha512-Rl6uugut2l9sLojjS4H4SAr3A4IgACMLgpuEMPYCVcKydzfyPrn5absNRju38IhQOf/NwjJY8OGWjlteqYeBCA==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -837,8 +828,8 @@ packages:
     resolution: {integrity: sha512-dle9A3yYxlBSrt8Fu+IpjGT8SY8hN0mlaA6GY8t0P5PjIOZemULz/E2Bnm/2dcUOena75OTNkHI76uZBNUUq3A==}
     engines: {node: ^10 || ^12 || >=14}
 
-  preline@3.0.1:
-    resolution: {integrity: sha512-rwtpdYZPCJZaJ+kGDCegmId/xrxx4IZMo+l+YCTaqis/ponVyVMimQ6TxTYjHgdOTpIbI5A9xXMYROXT4Jbbbg==}
+  preline@2.7.0:
+    resolution: {integrity: sha512-xMuMVZ7aftBT1/5/3Rb48i/t+LWQfsUjBX7bls4peqS6h5OZTbIgz0N6eMDzuDlOZF3DiSWLehl00oGlAkvovw==}
 
   proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
@@ -1121,17 +1112,6 @@ snapshots:
   '@esbuild/win32-x64@0.25.4':
     optional: true
 
-  '@floating-ui/core@1.7.0':
-    dependencies:
-      '@floating-ui/utils': 0.2.9
-
-  '@floating-ui/dom@1.7.0':
-    dependencies:
-      '@floating-ui/core': 1.7.0
-      '@floating-ui/utils': 0.2.9
-
-  '@floating-ui/utils@0.2.9': {}
-
   '@isaacs/cliui@8.0.2':
     dependencies:
       string-width: 5.1.2
@@ -1321,7 +1301,7 @@ snapshots:
   browserslist@4.24.5:
     dependencies:
       caniuse-lite: 1.0.30001717
-      electron-to-chromium: 1.5.150
+      electron-to-chromium: 1.5.151
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.24.5)
 
@@ -1403,7 +1383,7 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
-  electron-to-chromium@1.5.150: {}
+  electron-to-chromium@1.5.151: {}
 
   emoji-regex@8.0.0: {}
 
@@ -1715,9 +1695,9 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  preline@3.0.1:
+  preline@2.7.0:
     dependencies:
-      '@floating-ui/dom': 1.7.0
+      '@popperjs/core': 2.11.8
 
   proxy-from-env@1.1.0: {}
 
