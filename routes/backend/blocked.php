@@ -3,5 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\Blocked\BlockedController;
 
-Route::get('/access-blocked', [BlockedController::class, 'blocked'])
-  ->name('blocked');
+Route::controller(BlockedController::class)->group(
+  function () {
+    Route::get('/blocked', 'blocked')
+      ->name('blocked');
+    Route::get('/blocked/permission', 'blockedPermission')
+      ->name('blocked.permission');
+  }
+);

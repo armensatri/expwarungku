@@ -19,6 +19,7 @@ return Application::configure(basePath: dirname(__DIR__))
       __DIR__ . '/../routes/backend/managedata.php',
       __DIR__ . '/../routes/backend/managemenu.php',
       __DIR__ . '/../routes/backend/manageuser.php',
+      __DIR__ . '/../routes/backend/random.php',
 
       __DIR__ . '/../routes/frontend/home.php',
     ],

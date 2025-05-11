@@ -10,7 +10,9 @@ use App\Http\Controllers\Auth\{
 
 Route::group(
   [
-    'middleware' => ['guest']
+    'middleware' => [
+      'guest'
+    ]
   ],
   function () {
     Route::controller(LoginController::class)->group(
@@ -33,7 +35,9 @@ Route::group(
 
 Route::group(
   [
-    'middleware' => 'auth'
+    'middleware' => [
+      'auth'
+    ]
   ],
   function () {
     Route::post('/auth/logout', [LogoutController::class, 'logout'])
