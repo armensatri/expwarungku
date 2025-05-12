@@ -4,23 +4,22 @@
   <div class="relative px-6 bg-sky-100 isolate pt-14 lg:px-8">
     <div class="max-w-2xl mx-auto mt-20">
       <div class="text-center">
-        <div class="text-3xl font-bold text-slate-900 sm:text-4xl">
+        <div class="text-2xl font-bold tracking-wide uppercase text-slate-900 sm:text-3xl">
           Halaman
           <span class="text-blue-600">
             Home
           </span>
         </div>
 
-        <div class="mt-6 text-lg italic leading-8 tracking-wide text-black">
-          Pemrograman atau penataolahan adalah proses menulis, menguji dan memperbaiki, dan memelihara kode yang membangun
-          suatu program komputer. Kode ini ditulis dalam berbagai bahasa pemrograman
+        <div class="mt-6 text-lg leading-8 tracking-wide text-black">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur similique non quisquam mollitia magnam vero omnis debitis cupiditate nobis deleniti doloremque aliquam neque expedita laudantium blanditiis ipsum porro autem,
         </div>
       </div>
     </div>
 
     <div class="py-20">
       <!-- start content frontend -->
-      asasas
+      start content
     </div>
   </div>
 @endsection

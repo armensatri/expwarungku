@@ -54,7 +54,7 @@
       </div>
     </div>
 
-    <hr class="max-w-md my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
+    <hr class="max-w-md my-6 border-gray-200 sm:mx-auto lg:my-8">
 
     <div class="w-full mt-6">
       <div class="mb-4 text-base font-bold text-center text-black uppercase">
@@ -64,7 +64,7 @@
       <div class="flex justify-center mb-5 item-center">
         <a href="###"
           class="mx-1.5 rounded-full ring-1 ring-slate-500 ring-offset-2">
-          <img src="/frontend/img/sm-youtube.png"
+          <img src="/frontend/img/sosmed/youtube.png"
             alt="youtube"
             loading="lazy"
             class="w-8 h-8 drop-shadow-sm"
@@ -73,7 +73,7 @@
 
         <a href="###"
           class="mx-1.5 rounded-full ring-1 ring-slate-500 ring-offset-2">
-          <img src="/frontend/img/sm-instagram.png"
+          <img src="/frontend/img/sosmed/instagram.png"
             alt="instagram"
             loading="lazy"
             class="w-8 h-8 drop-shadow-sm"
@@ -82,8 +82,8 @@
 
         <a href="###"
           class="mx-1.5 rounded-full ring-1 ring-slate-500 ring-offset-2">
-          <img src="/frontend/img/sm-tiktok.png"
-            alt="youtube"
+          <img src="/frontend/img/sosmed/tiktok.png"
+            alt="tiktok"
             loading="lazy"
             class="w-8 h-8 drop-shadow-sm"
           />
@@ -91,8 +91,8 @@
 
         <a href="###"
           class="mx-1.5 rounded-full ring-1 ring-slate-500 ring-offset-2">
-          <img src="/frontend/img/sm-twitter.png"
-            alt="twitter-X"
+          <img src="/frontend/img/sosmed/twitter.png"
+            alt="twitter"
             loading="lazy"
             class="w-8 h-8 drop-shadow-sm"
           />
@@ -100,7 +100,7 @@
 
         <a href="###"
           class="mx-1.5 rounded-full ring-1 ring-slate-500 ring-offset-2">
-          <img src="/frontend/img/sm-facebook.png"
+          <img src="/frontend/img/sosmed/facebook.png"
             alt="facebook"
             loading="lazy"
             class="w-8 h-8 drop-shadow-sm"
@@ -108,7 +108,7 @@
         </a>
       </div>
 
-      <p class="flex justify-center gap-2 mt-4 mb-4">
+      <p class="flex items-center justify-center gap-2 mt-4 mb-4">
         <span class="ml-2 text-base font-medium tracking-wide text-black">
           Copyright©
         </span>
