@@ -18,7 +18,9 @@
 
     <div class="py-20">
       <!-- start content frontend -->
-      start content
+      <div class="text-center">
+        start content
+      </div>
     </div>
   </div>
 @endsection

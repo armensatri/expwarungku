@@ -6,23 +6,76 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class RegisterSr extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
-    {
-        return false;
-    }
+  public function authorize(): bool
+  {
+    return true;
+  }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
-    public function rules(): array
-    {
-        return [
-            //
-        ];
-    }
+  public function rules()
+  {
+    return [
+      'name' => [
+        'required',
+        'min:4',
+        'max:50',
+        'regex:/^[a-zA-Z\s]+$/'
+      ],
+
+      'username' => [
+        'required',
+        'min:4',
+        'max:15',
+        'regex:/^[a-z]+$/',
+        'unique:users,username'
+      ],
+
+      'email' => [
+        'required',
+        'email:rfc,dns',
+        'unique:users,email',
+      ],
+
+      'password' => [
+        'required',
+        'min:8',
+        'max:64',
+        'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+$/',
+        'same:passkon'
+      ],
+
+      'passkon' => [
+        'required',
+        'same:password'
+      ],
+    ];
+  }
+
+  public function messages()
+  {
+    return [
+      'name.required' => 'Nama!', // ini lagi ya
+      'name.min' => 'Nama!',
+      'name.max' => 'Nama!',
+      'name.regex' => 'Nama!',
+
+      'username.required' => 'Username!',
+      'username.min' => 'Username!',
+      'username.max' => 'Username!',
+      'username.regex' => 'Username!',
+      'username.unique' => 'Username!',
+
+      'email.required' => 'Email!',
+      'email.email' => 'Email!',
+      'email.unique' => 'Email!',
+
+      'password.required' => 'Password!',
+      'password.min' => 'Password!',
+      'password.max' => 'Password!',
+      'password.regex' => 'Password!',
+      'password.same' => 'Password!',
+
+      'passkon.required' => 'password konfirm!',
+      'passkon.same' => 'password konfirm!',
+    ];
+  }
 }
