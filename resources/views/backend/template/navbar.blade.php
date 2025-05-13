@@ -29,7 +29,7 @@
             <picture>
               <img src="{{ Auth::user() && Auth::user()->image ?
                 asset('storage/' . Auth::user()->image) :
-                '/backend/img/user.png' }}"
+                '/backend/img/user/user.png' }}"
                 alt="image-user"
                 loading="lazy"
                 class="object-cover object-top p-0.5
@@ -52,7 +52,7 @@
                 <picture>
                   <img src="{{ Auth::user() && Auth::user()->image ?
                     asset('storage/' . Auth::user()->image) :
-                    '/backend/img/user.png' }}"
+                    '/backend/img/user/user.png' }}"
                     alt="profile"
                     class="w-11 h-11 object-cover object-top rounded-full p-0.5 bg-white"
                   />
@@ -69,28 +69,7 @@
                 </div>
               </div>
 
-              <div class="flex flex-col mt-6 space-y-3.5">
-                <x-menu-auth
-                  route="#"
-                  image="/frontend/img/auth/lebo.png"
-                  alt="leaderboard"
-                  menu="Leaderboard"
-                />
-
-                <x-menu-auth
-                  route="#"
-                  image="/frontend/img/auth/regtu.png"
-                  alt="request"
-                  menu="Request"
-                />
-
-                <x-menu-auth
-                  route="#"
-                  image="/frontend/img/auth/activity.png"
-                  alt="log-activity"
-                  menu="Log activity"
-                />
-
+              <div class="flex flex-col mt-6 space-y-3">
                 <x-menu-auth
                   :route="route('home')"
                   image="/frontend/img/menu/home.png"
@@ -99,7 +78,7 @@
                 />
 
                 <a href="#"
-                  class="ml-1 border-t-[1px] flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-base text-red-600 hover:text-red-800">
+                  class="ml-0.5 border-t-[1px] flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-base text-red-600 hover:text-red-800">
                   <i class="text-lg text-red-600 bi bi-trash3-fill"></i>
                   Delete account
                 </a>

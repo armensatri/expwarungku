@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
         'name' => 'Armen Satri',
         'username' => 'armensatri',
         'email' => 'armensatri@gmail.com',
-        'password' => bcrypt('123qwe'),
+        'password' => bcrypt('Coba123#'),
         'role_id' => 1,
       ],
 
@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
         'name' => 'Super Admin',
         'username' => 'superadmin',
         'email' => 'superadmin@gmail.com',
-        'password' => bcrypt('123qwe'),
+        'password' => bcrypt('Coba123#'),
         'role_id' => 2,
       ],
 
@@ -30,7 +30,7 @@ class UserSeeder extends Seeder
         'name' => 'Admin',
         'username' => 'admin',
         'email' => 'admin@gmail.com',
-        'password' => bcrypt('123qwe'),
+        'password' => bcrypt('Coba123#'),
         'role_id' => 3,
       ],
 
@@ -38,7 +38,7 @@ class UserSeeder extends Seeder
         'name' => 'Member',
         'username' => 'member',
         'email' => 'member@gmail.com',
-        'password' => bcrypt('123qwe'),
+        'password' => bcrypt('Coba123#'),
         'role_id' => 4,
       ],
     ];

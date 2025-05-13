@@ -17,14 +17,14 @@ class RegisterSr extends FormRequest
       'name' => [
         'required',
         'min:4',
-        'max:50',
+        'max:25',
         'regex:/^[a-zA-Z\s]+$/'
       ],
 
       'username' => [
         'required',
         'min:4',
-        'max:15',
+        'max:14',
         'regex:/^[a-z]+$/',
         'unique:users,username'
       ],
@@ -53,29 +53,31 @@ class RegisterSr extends FormRequest
   public function messages()
   {
     return [
-      'name.required' => 'Nama!', // ini lagi ya
-      'name.min' => 'Nama!',
-      'name.max' => 'Nama!',
-      'name.regex' => 'Nama!',
+      'name.required' => 'Nama! harus di isi',
+      'name.min' => 'Nama! minimal 5 karakter',
+      'name.max' => 'Nama! maksimal 25 karakter',
+      'name.regex' => 'Nama! harus menggunakan huruf kecil dan besar',
 
-      'username.required' => 'Username!',
-      'username.min' => 'Username!',
-      'username.max' => 'Username!',
-      'username.regex' => 'Username!',
-      'username.unique' => 'Username!',
+      'username.required' => 'Username! harus di isi',
+      'username.min' => 'Username! minimal 4 karakter',
+      'username.max' => 'Username! maksimal 14 karakter',
+      'username.regex' =>
+      'Username! harus menggunakan huruf kecil tanpa spasi',
+      'username.unique' => 'Username! sudah terdaftar',
 
-      'email.required' => 'Email!',
-      'email.email' => 'Email!',
-      'email.unique' => 'Email!',
+      'email.required' => 'Email! harus di isi',
+      'email.email' => 'Email! tidak valid',
+      'email.unique' => 'Email! sudah terdaftar',
 
-      'password.required' => 'Password!',
-      'password.min' => 'Password!',
-      'password.max' => 'Password!',
-      'password.regex' => 'Password!',
-      'password.same' => 'Password!',
+      'password.required' => 'Password! harus di isi',
+      'password.min' => 'Password! minimal 8 karakter',
+      'password.max' => 'Password! maksimal 64 karakter',
+      'password.regex' =>
+      'harus ada huruf besar, huruf kecil, angka, dan karakter khusus',
+      'password.same' => 'Password! harus sama dengan password konfirm',
 
-      'passkon.required' => 'password konfirm!',
-      'passkon.same' => 'password konfirm!',
+      'passkon.required' => 'password konfirm! harus di isi',
+      'passkon.same' => 'password konfirm! harus sama dengan password',
     ];
   }
 }

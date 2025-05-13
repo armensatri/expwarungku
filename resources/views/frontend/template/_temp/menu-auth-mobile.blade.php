@@ -16,7 +16,7 @@
       <picture>
         <img src="{{ Auth::user() && Auth::user()->image ?
           asset('storage/' . Auth::user()->image) :
-          '/backend/img/user.png' }}"
+          '/frontend/img/user/user.png' }}"
           alt="user-default"
           loading="lazy"
           class="object-cover object-top p-0.5
@@ -40,7 +40,7 @@
           <picture>
             <img src="{{ Auth::user() && Auth::user()->image ?
               asset('storage/' . Auth::user()->image) :
-              '/backend/img/user.png' }}"
+              '/frontend/img/user/user.png' }}"
               alt="profile"
               class="w-11 h-11 object-cover object-top
               rounded-full p-0.5 bg-white"
@@ -58,11 +58,11 @@
           </div>
         </div>
 
-        <div class="mt-6 space-y-4">
+        <div class="mt-6 space-y-3">
           <div class="inline-flex items-center ml-4">
-            <img src="/frontend/img/auth/account.png"
+            <img src="/frontend/img/menu/auth/account.png"
               alt="account"
-              class="size-4"
+              class="size-[18px]"
             />
 
             <div class="m-1 hs-dropdown [--trigger:hover]
@@ -72,7 +72,7 @@
                 aria-label="Dropdown"
                 aria-haspopup="menu"
                 aria-expanded="false"
-                class="flex items-center w-full ml-2 space-x-3 text-gray-700 hs-dropdown-toggle hover:text-blue-700">
+                class="flex items-center w-full ml-2 space-x-3 text-gray-700 text-[15px] hs-dropdown-toggle hover:text-blue-700">
                 Account
                 <i class="ml-2 text-sm text-black bi bi-arrow-down-circle"></i>
               </button>
@@ -84,30 +84,9 @@
                 <div class="p-3 space-y-0.5">
                   <x-menu-auth-dropdown
                     route="#"
-                    image="/frontend/img/auth-dropdown/p.jpg"
-                    alt="personal"
-                    menu="Personal"
-                  />
-
-                  <x-menu-auth-dropdown
-                    route="#"
-                    image="/frontend/img/auth-dropdown/pp.png"
-                    alt="profile-public"
-                    menu="Profile public"
-                  />
-
-                  <x-menu-auth-dropdown
-                    route="#"
-                    image="/frontend/img/auth-dropdown/ep.png"
-                    alt="edit-profile"
-                    menu="Edit profile"
-                  />
-
-                  <x-menu-auth-dropdown
-                    route="#"
-                    image="/frontend/img/auth-dropdown/cp.png"
-                    alt="change-password"
-                    menu="Change password"
+                    image="/frontend/img/menu/auth-drop/profile.jpg"
+                    alt="profile"
+                    menu="Profile"
                   />
 
                   <a href="#"
@@ -121,29 +100,8 @@
           </div>
 
           <x-menu-auth
-            route="#"
-            image="/frontend/img/auth/lebo.png"
-            alt="leaderboard"
-            menu="Leaderboard"
-          />
-
-          <x-menu-auth
-            route="#"
-            image="/frontend/img/auth/regtu.png"
-            alt="request"
-            menu="Request"
-          />
-
-          <x-menu-auth
-            route="#"
-            image="/frontend/img/auth/activity.png"
-            alt="log-activity"
-            menu="Log activity"
-          />
-
-          <x-menu-auth
             :route="route(\App\Helpers\Redirects::Dashboard())"
-            image="/frontend/img/auth/dashboard.jpg"
+            image="/frontend/img/menu/auth/dashboard.jpg"
             alt="dashboard"
             menu="Dashboard"
           />

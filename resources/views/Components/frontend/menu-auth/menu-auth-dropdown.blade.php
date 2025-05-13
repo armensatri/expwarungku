@@ -1,5 +1,5 @@
 <a href="{{ $route }}"
-  class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-700 hover:text-blue-600">
+  class="flex items-center tracking-wide gap-x-3.5 py-2 px-3 rounded-lg text-gray-700 hover:text-blue-600 text-[15px]">
 
   <img src="{{ $image }}"
     alt="{{ $alt }}"

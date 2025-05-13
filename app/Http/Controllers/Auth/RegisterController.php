@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Models\Manageuser\User;
+use App\Models\Manageuser\Role;
 use App\Http\Controllers\Controller;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\RateLimiter;
@@ -45,5 +46,28 @@ class RegisterController extends Controller
     }
 
     $datastore = $request->validated();
+
+    $role = Role::where('id', 4)->first();
+
+    if (!$role) {
+      Alert::warning(
+        'Oops...',
+        'Registrasi! masih tertutup'
+      );
+
+      return redirect()->route('register');
+    }
+
+    $datastore['role_id'] = $role->id;
+
+    User::create($datastore);
+    RateLimiter::clear($key);
+
+    Alert::success(
+      'success',
+      'Akun anda telah di buat! login sekarang'
+    );
+
+    return redirect()->route('login');
   }
 }
