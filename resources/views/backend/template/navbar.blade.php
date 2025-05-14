@@ -72,13 +72,13 @@
               <div class="flex flex-col mt-6 space-y-3">
                 <x-menu-auth
                   :route="route('home')"
-                  image="/frontend/img/menu/home.png"
+                  image="/backend/img/auth/home.png"
                   alt="home"
                   menu="Back to home"
                 />
 
                 <a href="#"
-                  class="ml-0.5 border-t-[1px] flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-base text-red-600 hover:text-red-800">
+                  class="ml-0.5 border-t-[1px] flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-[15px] tracking-wide text-red-600 hover:text-red-800">
                   <i class="text-lg text-red-600 bi bi-trash3-fill"></i>
                   Delete account
                 </a>

@@ -57,6 +57,12 @@ use App\View\Components\Backend\TableHeader\{
   ThAction,
 };
 
+use App\View\Components\Backend\Breadcrumb\{
+  BreadcrumbIcon,
+  BreadcrumbName,
+  Slash,
+};
+
 class BackendServiceProvider extends ServiceProvider
 {
   public function register(): void
@@ -113,5 +119,10 @@ class BackendServiceProvider extends ServiceProvider
     Blade::component('filter', Filter::class);
     Blade::component('th', Th::class);
     Blade::component('th-action', ThAction::class);
+
+    // BREADCRUMB
+    Blade::component('breadcrumb-icon', BreadcrumbIcon::class);
+    Blade::component('breadcrumb-name', BreadcrumbName::class);
+    Blade::component('slash', Slash::class);
   }
 }
