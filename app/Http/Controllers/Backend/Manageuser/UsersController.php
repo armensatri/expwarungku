@@ -80,7 +80,10 @@ class UsersController extends Controller
    */
   public function edit(User $user)
   {
-    //
+    return view('backend.manageuser.users.edit', [
+      'title' => 'Edit data user',
+      'user' => $user
+    ]);
   }
 
   /**

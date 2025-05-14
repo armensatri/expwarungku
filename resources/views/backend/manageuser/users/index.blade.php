@@ -20,13 +20,7 @@
           <div class="flex flex-col">
             <div class="-m-1.5 overflow-x-auto min-w-full">
               <div class="p-1.5 inline-block xl:max-w-full align-middle leading-none">
-                <ol class="flex items-center gap-1.5 mb-5 ml-2">
-                  <x-breadcrumb-icon
-                    image="/backend/img/menu/users.jpg"
-                  />
-                  <x-slash/>
-                  <x-breadcrumb-name name="users"/>
-                </ol>
+                @include('backend.sbreadcrumb.users.index')
 
                 <div class="overflow-hidden app-table-border">
                   <div class="grid app-table-grid">
