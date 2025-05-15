@@ -7,8 +7,8 @@ use App\Models\Managemenu\Menu;
 use App\Models\Manageuser\User;
 use App\Models\Managemenu\Submenu;
 use App\Models\Manageuser\Permission;
-use Illuminate\Database\Query\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Cviebrock\EloquentSluggable\Sluggable;
 
 class Role extends Model

@@ -27,10 +27,10 @@ class RolesController extends Controller
       $cachekey,
       now()->addMinutes(5),
       function () {
-        return Role::search(request('search'))
+        return Role::search(request(['search']))
           ->select()
-          ->orderBy()
-          ->paginate()
+          ->orderBy('sr', 'asc')
+          ->paginate(10)
           ->withQueryString();
       }
     );
