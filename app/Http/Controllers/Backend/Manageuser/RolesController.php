@@ -15,7 +15,9 @@ class RolesController extends Controller
    */
   public function index()
   {
-    //
+    return view('backend.manageuser.roles.index', [
+      'title' => 'Semua data roles'
+    ]);
   }
 
   /**
