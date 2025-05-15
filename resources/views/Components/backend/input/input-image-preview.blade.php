@@ -14,7 +14,7 @@
         border border-gray-200">
         <img src="{{ asset('storage/' . $image) }}"
           alt="image"
-          class="relative object-cover object-top w-full h-full img-preview rounded-xl"
+          class="relative object-cover object-center w-full h-full img-preview rounded-xl"
         />
       </div>
     @else

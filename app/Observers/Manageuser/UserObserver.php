@@ -12,7 +12,7 @@ class UserObserver
     $this->invalidateCache();
   }
 
-  public function delete(User $user)
+  public function deleted(User $user)
   {
     $this->invalidateCache();
   }

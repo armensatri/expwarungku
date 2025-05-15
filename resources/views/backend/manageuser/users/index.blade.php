@@ -83,6 +83,9 @@
                         <x-th
                           name="role"
                         />
+                        <x-th
+                          name="url"
+                        />
                         <x-th-action/>
                       </tr>
                     </thead>
@@ -110,7 +113,7 @@
                             <div class="center">
                               <x-td-image-hover
                                 :asset="$user->image"
-                                asset-default="/image/default.png"
+                                asset-default="/image/user.png"
                               />
                             </div>
                           </td>
@@ -135,20 +138,26 @@
                             />
                           </td>
 
+                          <td class="h-px whitespace-nowrap">
+                            <x-td-var
+                              :var="$user->url"
+                            />
+                          </td>
+
                           <td class="size-px whitespace-nowrap">
                             <x-td-action
                               :id="$user->id"
 
                               :show="route(
-                                'users.show', $user->username
+                                'users.show', $user->url
                               )"
 
                               :edit="route(
-                                'users.edit', $user->username
+                                'users.edit', $user->url
                                 )"
 
                               :delete="route(
-                                'users.destroy', $user->username
+                                'users.destroy', $user->url
                               )"
                             />
                           </td>
