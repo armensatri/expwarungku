@@ -7,6 +7,7 @@ use App\Models\Manageuser\Role;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Manageuser\Role\RoleSr;
 use App\Http\Requests\Manageuser\Role\RoleUr;
+use Illuminate\Support\Facades\Cache;
 
 class RolesController extends Controller
 {
@@ -15,8 +16,28 @@ class RolesController extends Controller
    */
   public function index()
   {
+    $search = request('search');
+    $page = request('page', 1);
+    $cacheVersion = Cache::get('roles_cache_version', 1);
+
+    $cachekey =
+      "roles_v{$cacheVersion}:search:{$search}:page:{$page}";
+
+    $roles = Cache::remember(
+      $cachekey,
+      now()->addMinutes(5),
+      function () {
+        return Role::search(request('search'))
+          ->select()
+          ->orderBy()
+          ->paginate()
+          ->withQueryString();
+      }
+    );
+
     return view('backend.manageuser.roles.index', [
-      'title' => 'Semua data roles'
+      'title' => 'Semua data roles',
+      'roles' => $roles
     ]);
   }
 
