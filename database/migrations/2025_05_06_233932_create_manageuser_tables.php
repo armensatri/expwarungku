@@ -31,7 +31,7 @@ return new class extends Migration
       $table->string('slug')->unique();
       $table->string('bg');
       $table->string('text');
-      $table->text('description')->nullable();
+      $table->text('description');
       $table->string('guard_name')->default('web');
       $table->string('url', 5)->unique();
       $table->timestamps();

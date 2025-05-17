@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Backend\Manageuser;
 use Illuminate\Http\Request;
 use App\Models\Manageuser\Role;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cache;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\Manageuser\Role\RoleSr;
 use App\Http\Requests\Manageuser\Role\RoleUr;
-use Illuminate\Support\Facades\Cache;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class RolesController extends Controller
 {
@@ -28,7 +30,7 @@ class RolesController extends Controller
       now()->addMinutes(5),
       function () {
         return Role::search(request(['search']))
-          ->select()
+          ->select(['id', 'sr', 'name', 'bg', 'text', 'description', 'url'])
           ->orderBy('sr', 'asc')
           ->paginate(10)
           ->withQueryString();
@@ -46,7 +48,9 @@ class RolesController extends Controller
    */
   public function create()
   {
-    //
+    return view('backend.manageuser.roles.create', [
+      'title' => 'Create data role',
+    ]);
   }
 
   /**
@@ -54,7 +58,16 @@ class RolesController extends Controller
    */
   public function store(RoleSr $request)
   {
-    //
+    $datastore = $request->validated();
+
+    Role::create($datastore);
+
+    Alert::success(
+      'success',
+      'Data role! berhasil di tambahkan.'
+    );
+
+    return redirect()->route('roles.index');
   }
 
   /**
@@ -62,7 +75,10 @@ class RolesController extends Controller
    */
   public function show(Role $role)
   {
-    //
+    return view('backend.manageuser.roles.show', [
+      'title' => 'Detail data roles',
+      'role' => $role
+    ]);
   }
 
   /**
@@ -87,5 +103,19 @@ class RolesController extends Controller
   public function destroy(Role $role)
   {
     //
+  }
+
+  /**
+   * Generate resource slug otomatis.
+   */
+  public function slug(Request $request)
+  {
+    $slug = SlugService::createSlug(
+      Role::class,
+      'slug',
+      $request->name
+    );
+
+    return response()->json(['slug' => $slug]);
   }
 }

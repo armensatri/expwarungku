@@ -42,11 +42,6 @@ class LoginController extends Controller
 
       RateLimiter::clear($key);
 
-      User::where(
-        'id',
-        Auth::user()->id
-      )->update(['status' => 1]);
-
       $mapRoutes = [
         'owner' => 'owner',
         'superadmin' => 'superadmin',
