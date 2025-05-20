@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend\Manageuser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Manageuser\Permission;
+use Illuminate\Support\Facades\Cache;
 use App\Http\Requests\Manageuser\Permission\PermissionSr;
 use App\Http\Requests\Manageuser\Permission\PermissionUr;
 
@@ -15,7 +16,9 @@ class PermissionsController extends Controller
    */
   public function index()
   {
-    //
+    return view('backend.manageuser.permissions.index', [
+      'title' => 'Semua data permissions',
+    ]);
   }
 
   /**

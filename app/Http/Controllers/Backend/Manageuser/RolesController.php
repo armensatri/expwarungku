@@ -10,36 +10,19 @@ use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\Manageuser\Role\RoleSr;
 use App\Http\Requests\Manageuser\Role\RoleUr;
 use Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\Redirect;
 
 class RolesController extends Controller
 {
+  protected $cacheExpiration = 5;
+
   /**
    * Display a listing of the resource.
    */
   public function index()
   {
-    $search = request('search');
-    $page = request('page', 1);
-    $cacheVersion = Cache::get('roles_cache_version', 1);
-
-    $cachekey =
-      "roles_v{$cacheVersion}:search:{$search}:page:{$page}";
-
-    $roles = Cache::remember(
-      $cachekey,
-      now()->addMinutes(5),
-      function () {
-        return Role::search(request(['search']))
-          ->select(['id', 'sr', 'name', 'bg', 'text', 'description', 'url'])
-          ->orderBy('sr', 'asc')
-          ->paginate(10)
-          ->withQueryString();
-      }
-    );
-
     return view('backend.manageuser.roles.index', [
       'title' => 'Semua data roles',
-      'roles' => $roles
     ]);
   }
 
@@ -86,7 +69,10 @@ class RolesController extends Controller
    */
   public function edit(Role $role)
   {
-    //
+    return view('backend.manageuser.roles.edit', [
+      'title' => 'Edit data role',
+      'role' => $role
+    ]);
   }
 
   /**
@@ -94,7 +80,33 @@ class RolesController extends Controller
    */
   public function update(RoleUr $request, Role $role)
   {
-    //
+    $dataupdate = $request->validated();
+
+    if (
+      $request->name != $role->name ||
+      $request->slug != $role->slug
+    ) {
+      $rules = [
+        'name' => 'unique:roles,name,' . $role->id,
+        'slug' => 'unique:roles,slug,' . $role->id,
+      ];
+
+      $messages = [
+        'name.unique' => 'Role..name! sudah terdaptar',
+        'slug.unique' => 'Role..slug! sudah terdaptar',
+      ];
+
+      $request->validate($rules, $messages);
+    }
+
+    $role->update($dataupdate);
+
+    Alert::success(
+      'success',
+      'Data role! berhasil di update.'
+    );
+
+    return redirect()->route('roles.index');
   }
 
   /**
@@ -102,7 +114,23 @@ class RolesController extends Controller
    */
   public function destroy(Role $role)
   {
-    //
+    if (in_array($role->name, ['owner', 'superadmin'])) {
+      Alert::warning(
+        'Oops...',
+        'Data role! tidak bisa di delete.'
+      );
+
+      return redirect()->route('roles.index');
+    }
+
+    $role->delete();
+
+    Alert::success(
+      'success...',
+      'Data role! berhasil di delete.'
+    );
+
+    return redirect()->route('roles.index');
   }
 
   /**

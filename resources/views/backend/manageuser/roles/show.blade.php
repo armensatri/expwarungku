@@ -78,6 +78,12 @@
               name="Url"
               :var="$role->url"
             />
+
+            <x-show-action
+              name="Action"
+              :edit="route('roles.edit', $role->url)"
+              :delete="route('roles.destroy', $role->url)"
+            />
           </div>
         </div>
       </section>

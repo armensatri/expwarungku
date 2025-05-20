@@ -20,17 +20,14 @@ class UsersController extends Controller
    */
   public function index()
   {
-    $search = request('search');
-    $role = request('role');
-    $page = request('page', 1);
-    $cacheVersion = Cache::get('users_cache_version', 1);
-
-    $cachekey =
-      "users_v{$cacheVersion}:search:{$search}:role:{$role}:page:{$page}";
+    $cacheKey =
+      'manageuser_users_page_' . request()->get('page', 1) .
+      '_search_' . request('search') .
+      '_role_' . request('role');
 
     $users = Cache::remember(
-      $cachekey,
-      now()->addMinutes(5),
+      $cacheKey,
+      now()->addMinutes(10),
       function () {
         return User::search(request(['search', 'role']))
           ->select(['id', 'name', 'username', 'email', 'image', 'role_id', 'url'])
