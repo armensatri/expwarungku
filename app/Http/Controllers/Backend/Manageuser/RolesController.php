@@ -14,8 +14,6 @@ use Illuminate\Support\Facades\Redirect;
 
 class RolesController extends Controller
 {
-  protected $cacheExpiration = 5;
-
   /**
    * Display a listing of the resource.
    */
