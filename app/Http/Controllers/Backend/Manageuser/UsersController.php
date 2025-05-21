@@ -21,7 +21,7 @@ class UsersController extends Controller
       ->select(['id', 'image', 'name', 'email', 'role_id', 'url'])
       ->with(['role:id,name,bg,text'])
       ->orderBy('id', 'asc')
-      ->paginate(10)
+      ->paginate(15)
       ->withQueryString();
 
     return view('backend.manageuser.users.index', [
@@ -36,7 +36,7 @@ class UsersController extends Controller
   public function create(User $user)
   {
     $roles = Role::select('id', 'name')
-      ->orderBy('role_id', 'asc')
+      ->orderBy('sr', 'asc')
       ->get();
 
     return view('backend.manageuser.users.create', [
@@ -51,7 +51,9 @@ class UsersController extends Controller
    */
   public function store(UserSr $request)
   {
-    //
+    $datastore = $request->validated();
+
+    // ini lagi ya
   }
 
   /**

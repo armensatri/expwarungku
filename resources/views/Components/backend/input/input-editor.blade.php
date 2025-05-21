@@ -1,4 +1,4 @@
-<div class="w-full py-2">
+<div class="w-full py-2.5">
   <div class="flex ml-1 justify-start gap-1.5">
     <div>
       <label for="{{ $labelFor }}"

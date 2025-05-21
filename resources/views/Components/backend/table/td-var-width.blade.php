@@ -1,4 +1,4 @@
-<div class="flex items-center px-6 py-2 gap-x-3">
+<div class="flex items-center px-6 py-3.5 gap-x-3">
   <div class="inline-block hs-tooltip">
     <span class="inline-flex items-center text-gray-600 line-clamp-1
       text-[15px] hs-tooltip-toggle cursor-pointer">

@@ -1,4 +1,4 @@
-<div class="px-6 py-3">
+<div class="px-6 py-3.5">
   <div class="flex items-center gap-x-2">
     @if ($asset)
       <img class="inline-block object-cover object-top rounded-full outline-offset-2 outline-1 outline-blue-400 size-8"
