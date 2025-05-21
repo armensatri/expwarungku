@@ -2,7 +2,6 @@
 
 namespace App\Helpers;
 
-use App\Models\Managemenu\Menu;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -15,21 +14,16 @@ class Access
       return Redirect::route('login')->send();
     }
 
-    $role_id = Auth::user()->role_id;
-    $menu = request()->segment(1);
+    $roleId = Auth::user()->role_id;
+    $menuName = request()->segment(1);
 
-    $queryMenu = Menu::where('name', $menu)->first();
-
-    if (!$queryMenu) {
-      return Redirect::route('blocked')->send();
-    }
-
-    $queryAccessMenu = DB::table('role_has_menu')
-      ->where('role_id', $role_id)
-      ->where('menu_id', $queryMenu->id)
+    $hasAccess = DB::table('menus')
+      ->join('role_has_menu', 'menus.id', '=', 'role_has_menu.menu_id')
+      ->where('menus.name', $menuName)
+      ->where('role_has_menu.role_id', $roleId)
       ->exists();
 
-    if (!$queryAccessMenu) {
+    if (!$hasAccess) {
       return Redirect::route('blocked')->send();
     }
   }

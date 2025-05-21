@@ -7,7 +7,7 @@
         $asset ? asset('storage/' . $asset) :
         asset($assetDefault) }}"
         alt="user-image"
-        class="object-cover object-center rounded-full size-6"
+        class="object-cover object-center rounded-full size-8"
       />
 
       <div
@@ -31,7 +31,7 @@
         $asset ? asset('storage/' . $asset) :
         asset($assetDefault) }}"
         alt="user-image"
-        class="object-cover object-center rounded-full size-6"
+        class="object-cover object-center rounded-full size-8"
       />
 
       {{-- <div

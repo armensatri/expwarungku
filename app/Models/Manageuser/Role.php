@@ -77,15 +77,6 @@ class Role extends Model
     );
   }
 
-  public function hasPermission(string $permission): bool
-  {
-    return $this->role &&
-      $this->role->permissions()->where(
-        'name',
-        $permission
-      )->exists();
-  }
-
   protected static function boot()
   {
     parent::boot();

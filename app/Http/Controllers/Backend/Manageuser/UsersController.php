@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend\Manageuser;
 
 use Illuminate\Http\Request;
 use App\Models\Manageuser\User;
+use App\Models\Manageuser\Role;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Manageuser\User\UserSr;
 use App\Http\Requests\Manageuser\User\UserUr;
@@ -15,15 +16,34 @@ class UsersController extends Controller
    */
   public function index()
   {
-    //
+    $users = User::query()
+      ->search(request(['search', 'role']))
+      ->select(['id', 'image', 'name', 'email', 'role_id', 'url'])
+      ->with(['role:id,name,bg,text'])
+      ->orderBy('id', 'asc')
+      ->paginate(10)
+      ->withQueryString();
+
+    return view('backend.manageuser.users.index', [
+      'title' => 'Semua data user',
+      'users' => $users
+    ]);
   }
 
   /**
    * Show the form for creating a new resource.
    */
-  public function create()
+  public function create(User $user)
   {
-    //
+    $roles = Role::select('id', 'name')
+      ->orderBy('role_id', 'asc')
+      ->get();
+
+    return view('backend.manageuser.users.create', [
+      'title' => 'Create data user',
+      'user' => $user,
+      'roles' => $roles
+    ]);
   }
 
   /**

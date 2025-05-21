@@ -24,11 +24,25 @@ class SidebarServiceProvider extends ServiceProvider
 
       $menus = Menu::with([
         'submenus' => function ($query) {
-          $query->orderBy('ssm', 'asc');
+          $query->select(
+            'id',
+            'menu_id',
+            'name',
+            'ssm',
+            'active',
+            'routename'
+          )->orderBy('ssm', 'asc');
         }
-      ])->whereHas('roles', function ($query) use ($user) {
-        $query->where('role_id', $user->role_id);
-      })->orderBy('sm', 'asc')->get();
+      ])->select(
+        'id',
+        'name',
+        'sm'
+      )->whereHas(
+        'roles',
+        function ($query) use ($user) {
+          $query->where('role_id', $user->role_id);
+        }
+      )->orderBy('sm', 'asc')->get();
 
       $view->with('menus', $menus);
     });

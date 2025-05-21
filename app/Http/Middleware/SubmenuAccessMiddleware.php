@@ -2,11 +2,10 @@
 
 namespace App\Http\Middleware;
 
-use App\Models\Managemenu\Submenu;
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class SubmenuAccessMiddleware
 {
@@ -17,20 +16,15 @@ class SubmenuAccessMiddleware
     }
 
     $role_id = Auth::user()->role_id;
-    $submenu = $request->segment(1);
+    $submenu_slug = $request->segment(1);
 
-    $querySubMenu = Submenu::where('name', $submenu)->first();
-
-    if (!$querySubMenu) {
-      return redirect()->route('blocked');
-    }
-
-    $queryAccessSubMenu = DB::table('role_has_submenu')
-      ->where('role_id', $role_id)
-      ->where('submenu_id', $querySubMenu->id)
+    $hasAccess = DB::table('role_has_submenu')
+      ->join('submenus', 'role_has_submenu.submenu_id', '=', 'submenus.id')
+      ->where('role_has_submenu.role_id', $role_id)
+      ->where('submenus.name', $submenu_slug)
       ->exists();
 
-    if (!$queryAccessSubMenu) {
+    if (!$hasAccess) {
       return redirect()->route('blocked');
     }
 
