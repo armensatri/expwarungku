@@ -1,15 +1,13 @@
-<div class="px-6 py-3.5">
-  <div class="flex items-center gap-x-3">
+<div class="px-6 py-3">
+  <div class="flex items-center gap-x-2">
     @if ($asset)
       <div class="hs-tooltip">
-        <div
-          class="inline-flex items-center justify-center rounded-full hs-tooltip-toggle hover:cursor-pointer">
-
+        <div class="rounded-full hs-tooltip-toggle hover:cursor-pointer">
           <img src="{{
             $asset ? asset('storage/' . $asset) :
             asset($assetDefault) }}"
             alt="user-image"
-            class="object-cover object-center rounded-full size-8"
+            class="inline-block object-cover object-center rounded-full size-6"
           />
 
           <div
@@ -51,4 +49,5 @@
     @endif
   </div>
 </div>
+
 

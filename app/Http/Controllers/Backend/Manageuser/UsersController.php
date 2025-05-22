@@ -8,6 +8,8 @@ use App\Models\Manageuser\Role;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Manageuser\User\UserSr;
 use App\Http\Requests\Manageuser\User\UserUr;
+use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UsersController extends Controller
 {
@@ -53,7 +55,22 @@ class UsersController extends Controller
   {
     $datastore = $request->validated();
 
-    // ini lagi ya
+    if ($request->hasFile('image')) {
+      $datastore['image'] = $request->file('image')->store(
+        '/manageuser/users'
+      );
+    }
+
+    $datastore['role_id'] = $request->role_id;
+
+    User::create($datastore);
+
+    Alert::success(
+      'success',
+      'Data user! berhasil di tambahkan'
+    );
+
+    return redirect()->route('users.index');
   }
 
   /**
@@ -61,7 +78,10 @@ class UsersController extends Controller
    */
   public function show(User $user)
   {
-    //
+    return view('backend.manageuser.users.show', [
+      'title' => 'Detail data user',
+      'user' => $user
+    ]);
   }
 
   /**
@@ -69,7 +89,15 @@ class UsersController extends Controller
    */
   public function edit(User $user)
   {
-    //
+    $roles = Role::select('id', 'name')
+      ->orderBy('sr', 'asc')
+      ->get();
+
+    return view('backend.manageuser.users.edit', [
+      'title' => 'Edit data user',
+      'user' => $user,
+      'roles' => $roles
+    ]);
   }
 
   /**
@@ -77,7 +105,45 @@ class UsersController extends Controller
    */
   public function update(UserUr $request, User $user)
   {
-    //
+    $dataupdate = $request->validated();
+
+    if (
+      $request->username != $user->username ||
+      $request->email != $user->email
+    ) {
+      $rules = [
+        'username' => 'unique:users,username,' . $user->id,
+        'email' => 'unique:users,email,' . $user->id,
+      ];
+
+      $messages = [
+        'username.unique' => 'User..username! sudah terdaptar',
+        'email.unique' => 'User..email! sudah terdaptar',
+      ];
+
+      $request->validate($rules, $messages);
+    }
+
+    if ($request->hasFile('image')) {
+      if (!empty($user->image)) {
+        Storage::delete($user->image);
+      }
+
+      $dataupdate['image'] = $request->file('image')->store(
+        '/manageuser/users'
+      );
+    }
+
+    $dataupdate['role_id'] = $request->role_id;
+
+    $user->update($dataupdate);
+
+    Alert::success(
+      'success',
+      'Data user! berhasil di update'
+    );
+
+    return redirect()->route('users.index');
   }
 
   /**
@@ -85,6 +151,26 @@ class UsersController extends Controller
    */
   public function destroy(User $user)
   {
-    //
+    if (in_array($user->username, ['armensatri'])) {
+      Alert::warning(
+        'Oops...',
+        'Data user! tidak bisa di delete'
+      );
+
+      return redirect()->route('users.index');
+    }
+
+    if ($user->image) {
+      Storage::delete($user->image);
+    }
+
+    User::destroy($user->id);
+
+    Alert::success(
+      'success',
+      'Data user! berhasil di delete'
+    );
+
+    return redirect()->route('users.index');
   }
 }
