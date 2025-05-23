@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Backend\Managemenu;
 
+use App\Helpers\RandomUrl;
 use Illuminate\Http\Request;
 use App\Models\Managemenu\Menu;
 use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\Managemenu\Menu\MenuSr;
 use App\Http\Requests\Managemenu\Menu\MenuUr;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class MenusController extends Controller
 {
@@ -15,7 +18,17 @@ class MenusController extends Controller
    */
   public function index()
   {
-    //
+    $menus = Menu::query()
+      ->search(request(['search']))
+      ->select(['id', 'sm', 'name', 'description', 'url'])
+      ->orderBy('sm', 'asc')
+      ->paginate(15)
+      ->withQueryString();
+
+    return view('backend.managemenu.menus.index', [
+      'title' => 'Semua data menus',
+      'menus' => $menus
+    ]);
   }
 
   /**
@@ -23,7 +36,9 @@ class MenusController extends Controller
    */
   public function create()
   {
-    //
+    return view('backend.managemenu.menus.create', [
+      'title' => 'Create data menu'
+    ]);
   }
 
   /**
@@ -31,7 +46,19 @@ class MenusController extends Controller
    */
   public function store(MenuSr $request)
   {
-    //
+    $datastore = $request->validated();
+
+    $datastore['url'] = $request->input('url')
+      ?: RandomUrl::GenerateUrl();
+
+    Menu::create($datastore);
+
+    Alert::success(
+      'success',
+      'Data menu! berhasil di tambahkan.'
+    );
+
+    return redirect()->route('menus.index');
   }
 
   /**
@@ -39,7 +66,10 @@ class MenusController extends Controller
    */
   public function show(Menu $menu)
   {
-    //
+    return view('backend.managemenu.menus.show', [
+      'title' => 'Detail data menu',
+      'menu' => $menu
+    ]);
   }
 
   /**
@@ -47,7 +77,7 @@ class MenusController extends Controller
    */
   public function edit(Menu $menu)
   {
-    //
+    // ini lagi ya
   }
 
   /**
@@ -64,5 +94,19 @@ class MenusController extends Controller
   public function destroy(Menu $menu)
   {
     //
+  }
+
+  /**
+   * Generate resource slug otomatis.
+   */
+  public function slug(Request $request)
+  {
+    $slug = SlugService::createSlug(
+      Menu::class,
+      'slug',
+      $request->name
+    );
+
+    return response()->json(['slug' => $slug]);
   }
 }

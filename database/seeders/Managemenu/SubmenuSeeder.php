@@ -152,7 +152,7 @@ class SubmenuSeeder extends Seeder
         'slug' => 'menus',
         'route' => '/menus',
         'active' => 'menus',
-        'routename' => 'menus',
+        'routename' => '/menus',
         'description' => 'data menus'
       ],
       [
