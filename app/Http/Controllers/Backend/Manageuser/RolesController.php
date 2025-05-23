@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Backend\Manageuser;
 
+use App\Helpers\RandomUrl;
 use Illuminate\Http\Request;
 use App\Models\Manageuser\Role;
 use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\Manageuser\Role\RoleSr;
 use App\Http\Requests\Manageuser\Role\RoleUr;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class RolesController extends Controller
 {
@@ -15,7 +18,17 @@ class RolesController extends Controller
    */
   public function index()
   {
-    //
+    $roles = Role::query()
+      ->search(request(['search']))
+      ->select(['id', 'sr', 'name', 'bg', 'text', 'description', 'url', 'guard_name'])
+      ->orderBy('sr', 'asc')
+      ->paginate(15)
+      ->withQueryString();
+
+    return view('backend.manageuser.roles.index', [
+      'title' => 'Semua data roles',
+      'roles' => $roles
+    ]);
   }
 
   /**
@@ -23,7 +36,9 @@ class RolesController extends Controller
    */
   public function create()
   {
-    //
+    return view('backend.manageuser.roles.create', [
+      'title' => 'Create data role',
+    ]);
   }
 
   /**
@@ -31,7 +46,19 @@ class RolesController extends Controller
    */
   public function store(RoleSr $request)
   {
-    //
+    $datastore = $request->validated();
+
+    $datastore['url'] = $request->input('url')
+      ?: RandomUrl::GenerateUrl();
+
+    Role::create($datastore);
+
+    Alert::success(
+      'success',
+      'Data role! berhasil di tambahkan.'
+    );
+
+    return redirect()->route('roles.index');
   }
 
   /**
@@ -39,7 +66,10 @@ class RolesController extends Controller
    */
   public function show(Role $role)
   {
-    //
+    return view('backend.manageuser.roles.show', [
+      'title' => 'Detail data role',
+      'role' => $role
+    ]);
   }
 
   /**
@@ -47,7 +77,10 @@ class RolesController extends Controller
    */
   public function edit(Role $role)
   {
-    //
+    return view('backend.manageuser.roles.edit', [
+      'title' => 'Edit data role',
+      'role' => $role
+    ]);
   }
 
   /**
@@ -55,7 +88,33 @@ class RolesController extends Controller
    */
   public function update(RoleUr $request, Role $role)
   {
-    //
+    $dataupdate = $request->validated();
+
+    if (
+      $request->name != $role->name ||
+      $request->slug != $role->slug
+    ) {
+      $rules = [
+        'name' => 'unique:roles,name,' . $role->id,
+        'slug' => 'unique:roles,slug,' . $role->id,
+      ];
+
+      $messages = [
+        'name.unique' => 'Role..name! sudah terdaptar',
+        'slug.unique' => 'Role..slug! sudah terdaptar',
+      ];
+
+      $request->validate($rules, $messages);
+    }
+
+    $role->update($dataupdate);
+
+    Alert::success(
+      'success',
+      'Data role! berhasil di update.'
+    );
+
+    return redirect()->route('roles.index');
   }
 
   /**
@@ -63,6 +122,36 @@ class RolesController extends Controller
    */
   public function destroy(Role $role)
   {
-    //
+    if (in_array($role->name, ['owner', 'superadmin'])) {
+      Alert::warning(
+        'Oops...',
+        'Data role! tidak bisa di delete.'
+      );
+
+      return redirect()->route('roles.index');
+    }
+
+    Role::destroy($role->id);
+
+    Alert::success(
+      'success',
+      'Data role! berhasil di delete.'
+    );
+
+    return redirect()->route('roles.index');
+  }
+
+  /**
+   * Generate resource slug otomatis.
+   */
+  public function slug(Request $request)
+  {
+    $slug = SlugService::createSlug(
+      Role::class,
+      'slug',
+      $request->name
+    );
+
+    return response()->json(['slug' => $slug]);
   }
 }

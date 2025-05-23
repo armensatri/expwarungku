@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Backend\Manageuser;
 
+use App\Helpers\RandomUrl;
 use Illuminate\Http\Request;
-use App\Models\Manageuser\User;
 use App\Models\Manageuser\Role;
+use App\Models\Manageuser\User;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Manageuser\User\UserSr;
-use App\Http\Requests\Manageuser\User\UserUr;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Requests\Manageuser\User\UserSr;
+use App\Http\Requests\Manageuser\User\UserUr;
 
 class UsersController extends Controller
 {
@@ -55,6 +56,9 @@ class UsersController extends Controller
   {
     $datastore = $request->validated();
 
+    $datastore['url'] = $request->input('url')
+      ?: RandomUrl::GenerateUrl();
+
     if ($request->hasFile('image')) {
       $datastore['image'] = $request->file('image')->store(
         '/manageuser/users'
@@ -67,7 +71,7 @@ class UsersController extends Controller
 
     Alert::success(
       'success',
-      'Data user! berhasil di tambahkan'
+      'Data user! berhasil di tambahkan.'
     );
 
     return redirect()->route('users.index');
@@ -140,7 +144,7 @@ class UsersController extends Controller
 
     Alert::success(
       'success',
-      'Data user! berhasil di update'
+      'Data user! berhasil di update.'
     );
 
     return redirect()->route('users.index');
@@ -154,7 +158,7 @@ class UsersController extends Controller
     if (in_array($user->username, ['armensatri'])) {
       Alert::warning(
         'Oops...',
-        'Data user! tidak bisa di delete'
+        'Data user! tidak bisa di delete.'
       );
 
       return redirect()->route('users.index');
@@ -168,7 +172,7 @@ class UsersController extends Controller
 
     Alert::success(
       'success',
-      'Data user! berhasil di delete'
+      'Data user! berhasil di delete.'
     );
 
     return redirect()->route('users.index');

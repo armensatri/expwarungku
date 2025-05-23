@@ -140,7 +140,7 @@ class SubmenuSeeder extends Seeder
         'slug' => 'permissions',
         'route' => '/permissions',
         'active' => 'permissions',
-        'routename' => '/permission',
+        'routename' => '/permissions',
         'description' => 'data permissions'
       ],
 

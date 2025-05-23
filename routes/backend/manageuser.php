@@ -16,7 +16,7 @@ Route::group(
   ],
   function () {
     Route::get('/roles/slug', [RolesController::class, 'slug']);
-    Route::get('/permission/slug', [PermissionsController::class, 'slug']);
+    Route::get('/permissions/slug', [PermissionsController::class, 'slug']);
   }
 );
 
