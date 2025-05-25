@@ -6,23 +6,52 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class SubmenuUr extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
-    {
-        return false;
-    }
+  public function authorize(): bool
+  {
+    return true;
+  }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
-    public function rules(): array
-    {
-        return [
-            //
-        ];
-    }
+  public function rules(): array
+  {
+    return [
+      'menu_id' => [
+        'required'
+      ],
+
+      'ssm' => [
+        'required',
+        'numeric'
+      ],
+
+      'name' => [
+        'required',
+        'min:4',
+        'max:50',
+      ],
+
+      'slug' => [
+        'required',
+        'min:4',
+        'max:50',
+      ],
+    ];
+  }
+
+  public function messages()
+  {
+    return [
+      'menu_id.required' => 'Submenu..menu_id! harus di isi',
+
+      'ssm.required' => 'Submenu..ssm! harus di isi',
+      'ssm.numeric' => 'Submenu..ssm! harus angka',
+
+      'name.required' => 'Submenu..name! harus di isi',
+      'name.min' => 'Submenu..name! minimal 4 karakter',
+      'name.max' => 'Submenu..name! maksimal 50 karakter',
+
+      'slug.required' => 'Submenu..slug! harus di isi',
+      'slug.min' => 'Submenu..slug! minimal 4 karakter',
+      'slug.max' => 'Submenu..slug! maksimal 50 karakter',
+    ];
+  }
 }

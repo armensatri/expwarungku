@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\Backend\Managemenu;
 
+use App\Helpers\RandomUrl;
 use Illuminate\Http\Request;
+use App\Models\Managemenu\Menu;
 use App\Models\Managemenu\Submenu;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Managemenu\Submenu\SubmenuSr;
 use App\Http\Requests\Managemenu\Submenu\SubmenuUr;
+use Cviebrock\EloquentSluggable\Services\SlugService;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SubmenusController extends Controller
 {
@@ -15,7 +19,18 @@ class SubmenusController extends Controller
    */
   public function index()
   {
-    //
+    $submenus = Submenu::query()
+      ->search(['search', 'menu'])
+      ->select(['id', 'menu_id', 'ssm', 'name', 'description', 'url'])
+      ->with(['menu'])
+      ->orderBy('sm', 'asc')
+      ->paginate(15)
+      ->withQueryString();
+
+    return view('backend.managemenu.submenus.index', [
+      'title' => 'Semua data submenus',
+      'submenus' => $submenus
+    ]);
   }
 
   /**
@@ -23,7 +38,14 @@ class SubmenusController extends Controller
    */
   public function create()
   {
-    //
+    $menus = Menu::select('id', 'name')
+      ->orderBy('sm', 'asc')
+      ->get();
+
+    return view('backend.managemenu.submenus.create', [
+      'title' => 'Create data menu',
+      'menus' => $menus
+    ]);
   }
 
   /**
@@ -31,7 +53,19 @@ class SubmenusController extends Controller
    */
   public function store(SubmenuSr $request)
   {
-    //
+    $datastore = $request->validated();
+
+    $datastore['url'] = $request->input('url')
+      ?: RandomUrl::GenerateUrl();
+
+    Submenu::create($datastore);
+
+    Alert::success(
+      'success',
+      'Data submenu! berhasil di tambahkan.'
+    );
+
+    return redirect()->route('submenus.index');
   }
 
   /**
@@ -64,5 +98,19 @@ class SubmenusController extends Controller
   public function destroy(Submenu $submenu)
   {
     //
+  }
+
+  /**
+   * Generate resource slug otomatis.
+   */
+  public function slug(Request $request)
+  {
+    $slug = SlugService::createSlug(
+      Submenu::class,
+      'slug',
+      $request->name
+    );
+
+    return response()->json(['slug' => $slug]);
   }
 }

@@ -77,7 +77,10 @@ class MenusController extends Controller
    */
   public function edit(Menu $menu)
   {
-    // ini lagi ya
+    return view('backend.managemenu.menus.edit', [
+      'title' => 'Edit data menu',
+      'menu' => $menu
+    ]);
   }
 
   /**
@@ -85,7 +88,33 @@ class MenusController extends Controller
    */
   public function update(MenuUr $request, Menu $menu)
   {
-    //
+    $dataupdate = $request->validated();
+
+    if (
+      $request->name != $menu->name ||
+      $request->slug != $menu->slug
+    ) {
+      $rules = [
+        'name' => 'unique:menus,name,' . $menu->id,
+        'slug' => 'unique:menus,slug,' . $menu->id,
+      ];
+
+      $messages = [
+        'name.unique' => 'Menu..name! sudah terdaptar',
+        'slug.unique' => 'Menu..slug! sudah terdaptar',
+      ];
+
+      $request->validate($rules, $messages);
+    }
+
+    $menu->update($dataupdate);
+
+    Alert::success(
+      'success',
+      'Data menu! berhasil di update.'
+    );
+
+    return redirect()->route('menus.index');
   }
 
   /**
@@ -93,7 +122,32 @@ class MenusController extends Controller
    */
   public function destroy(Menu $menu)
   {
-    //
+    if (in_array($menu->name, [
+      'owner',
+      'superadmin',
+      'admin',
+      'member',
+      'account',
+      'managedata',
+      'manageuser',
+      'managemenu'
+    ])) {
+      Alert::warning(
+        'Oops...',
+        'Data menu! tidak bisa di delete.'
+      );
+
+      return redirect()->route('menus.index');
+    }
+
+    Menu::destroy($menu->id);
+
+    Alert::success(
+      'success',
+      'Data menu! berhasil di delete.'
+    );
+
+    return redirect()->route('menus.index');
   }
 
   /**
