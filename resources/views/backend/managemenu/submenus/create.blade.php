@@ -15,7 +15,7 @@
         <div class="w-full">
           @include('backend.sbreadcrumb.submenus.create')
 
-          <form action="{{ route('menus.store') }}"
+          <form action="{{ route('submenus.store') }}"
             method="POST">
             @csrf
 
