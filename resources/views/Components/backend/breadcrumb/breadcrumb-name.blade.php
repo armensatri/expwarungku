@@ -1,5 +1,17 @@
+@php
+  use Illuminate\Support\Str;
+
+  $class = $attributes->get('class');
+  $textcolor = Str::contains($class, 'text-');
+@endphp
+
 <li class="inline-flex items-center">
-  <div class="flex items-center text-sm text-gray-600">
+  <div {{
+    $attributes->merge([
+      'class' => 'flex items-center text-sm tracking-wide' .
+        ($textcolor ? '' : ' text-gray-600')
+      ])
+    }}>
     {{ $name }}
   </div>
 </li>
