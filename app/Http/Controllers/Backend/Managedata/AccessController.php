@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Backend\Managedata;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class AccessController extends Controller
 {
-    //
+  public function index()
+  {
+    return 'access';
+  }
 }
