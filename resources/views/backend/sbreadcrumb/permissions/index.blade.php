@@ -5,5 +5,5 @@
 
   <x-slash/>
 
-  <x-breadcrumb-name name="permissions"/>
+  <x-breadcrumb-name name="permissions" class="text-blue-600"/>
 </ol>

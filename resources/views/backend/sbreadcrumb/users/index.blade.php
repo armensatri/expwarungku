@@ -5,5 +5,5 @@
 
   <x-slash/>
 
-  <x-breadcrumb-name name="users"/>
+  <x-breadcrumb-name name="users" class="text-blue-600"/>
 </ol>

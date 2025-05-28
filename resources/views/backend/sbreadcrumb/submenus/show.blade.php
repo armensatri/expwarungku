@@ -9,5 +9,5 @@
 
   <x-slash/>
 
-  <x-breadcrumb-name :name="$submenu->slug"/>
+  <x-breadcrumb-name :name="$submenu->slug" class="text-blue-600"/>
 </ol>

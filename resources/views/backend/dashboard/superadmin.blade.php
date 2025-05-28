@@ -12,6 +12,8 @@
       </section>
 
       <section class="w-full px-4 mt-8 mb-5">
+        @include('backend.sbreadcrumb.dashboard.superadmin')
+
         <div class="app-cse-border">
           <div class="p-8 text-center">
             <div class="mb-4 text-3xl font-extrabold tracking-wider text-gray-900 uppercase">

@@ -13,5 +13,5 @@
 
   <x-slash/>
 
-  <x-breadcrumb-name name="edit"/>
+  <x-breadcrumb-name name="edit" class="text-blue-600"/>
 </ol>

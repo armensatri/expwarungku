@@ -5,9 +5,9 @@
 
   <x-slash/>
 
-  <x-breadcrumb-name name="menus"/> 
+  <x-breadcrumb-name name="menus"/>
 
   <x-slash/>
 
-  <x-breadcrumb-name :name="$menu->slug"/>
+  <x-breadcrumb-name :name="$menu->slug" class="text-blue-600"/>
 </ol>

@@ -31,25 +31,20 @@ class RoleAccessMenuController extends Controller
 
   public function accessUpMenu(Request $request)
   {
-    // Ambil role_id dan menu_id dari request
     $roleId = $request->role_id;
     $menuId = $request->menu_id;
 
-    // Data untuk operasi insert/delete
     $data = [
       'role_id' => $roleId,
       'menu_id' => $menuId
     ];
 
-    // Periksa apakah data sudah ada di tabel pivot
     $exists = DB::table('role_has_menu')->where($data)->exists();
 
     if ($exists) {
-      // Jika sudah ada, hapus data
       DB::table('role_has_menu')->where($data)->delete();
       $message = 'Data menu! berhasil dihapus!';
     } else {
-      // Jika belum ada, tambahkan data
       DB::table('role_has_menu')->insert($data);
       $message = 'Data menu! berhasil ditambahkan!';
     }

@@ -5,5 +5,5 @@
 
   <x-slash/>
 
-  <x-breadcrumb-name name="roles"/>
+  <x-breadcrumb-name name="roles" class="text-blue-600"/>
 </ol>

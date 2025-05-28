@@ -9,5 +9,5 @@
 
   <x-slash/>
 
-  <x-breadcrumb-name :name="$role->slug"/>
+  <x-breadcrumb-name :name="$role->slug" class="text-blue-600"/>
 </ol>

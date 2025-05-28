@@ -9,5 +9,5 @@
 
   <x-slash/>
 
-  <x-breadcrumb-name name="create"/>
+  <x-breadcrumb-name name="create" class="text-blue-600"/>
 </ol>

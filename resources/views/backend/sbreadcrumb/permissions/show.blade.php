@@ -9,5 +9,5 @@
 
   <x-slash/>
 
-  <x-breadcrumb-name :name="$permission->slug"/>
+  <x-breadcrumb-name :name="$permission->slug" class="text-blue-600"/>
 </ol>
