@@ -103,11 +103,11 @@
                           <td class="size-px whitespace-nowrap">
                             <div class="center">
                               <input type="checkbox"
-                                data-role="{{ $role->url }}"
+                                data-role="{{ $role->id }}"
                                 data-menu="{{ $menu->id }}"
-                                data-role-name="{{ $role->name ?? '' }}"
+                                data-url="{{ $role->url }}"
                                 {{ in_array($menu->id, $role->menus->pluck('id')->toArray()) ? 'checked' : '' }}
-                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-400 rounded-md cursor-pointer access-checkbox"
+                                class="w-4 h-4 text-blue-600 rounded-[5px] cursor-pointer access-checkbox outline outline-offset-1 outline-1 outline-blue-600"
                               />
                             </div>
                           </td>
@@ -138,12 +138,12 @@
         checkbox.addEventListener("change", async function () {
 
           const roleId = this.getAttribute("data-role");
-          const roleName = this.getAttribute("data-role-name");
           const menuId = this.getAttribute("data-menu");
+          const roleUrl = this.getAttribute("data-url");
           const isChecked = this.checked ? 1 : 0;
 
           try {
-            const response = await fetch("{{ route('ca.menu') }}", {
+            const response = await fetch("{{ route('access.up.menu') }}", {
               method: "POST",
 
               headers: {
@@ -156,6 +156,7 @@
               body: JSON.stringify({
                 role_id: roleId,
                 menu_id: menuId,
+                role_url:roleUrl,
                 is_checked: isChecked,
               }),
             });
@@ -174,9 +175,8 @@
 
               }).then(() => {
                 window.location.href =
-                  "{{ route('a.menu', [':id', ':name']) }}"
-                  .replace(":id", roleId)
-                  .replace(":name", encodeURIComponent(roleName));
+                  "{{ route('access.menu', [':url']) }}"
+                  .replace(":url", roleUrl)
               });
 
             } else {

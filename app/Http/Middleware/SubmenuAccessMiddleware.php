@@ -16,12 +16,12 @@ class SubmenuAccessMiddleware
     }
 
     $role_id = Auth::user()->role_id;
-    $submenu_slug = $request->segment(1);
+    $submenu_name = $request->segment(1);
 
     $hasAccess = DB::table('role_has_submenu')
       ->join('submenus', 'role_has_submenu.submenu_id', '=', 'submenus.id')
       ->where('role_has_submenu.role_id', $role_id)
-      ->where('submenus.name', $submenu_slug)
+      ->where('submenus.name', $submenu_name)
       ->exists();
 
     if (!$hasAccess) {

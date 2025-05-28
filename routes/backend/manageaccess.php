@@ -24,7 +24,7 @@ Route::group(
             'accessMenu'
           )->name('access.menu');
           Route::post(
-            '/access/menu/role/{url}',
+            '/access/menu/role',
             'accessUpMenu'
           )->name('access.up.menu');
         }
@@ -38,7 +38,7 @@ Route::group(
             'accessSubmenu'
           )->name('access.submenu');
           Route::post(
-            '/access/submenu/role/{url}',
+            '/access/submenu/role',
             'accessUpSubmenu'
           )->name('access.up.submenu');
         }
@@ -52,7 +52,7 @@ Route::group(
             'accessPermission'
           )->name('access.permission');
           Route::post(
-            '/access/permission/role/{url}',
+            '/access/permission/role',
             'accessUpPermission'
           )->name('access.up.permission');
         }

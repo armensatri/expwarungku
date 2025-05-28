@@ -29,7 +29,7 @@ return Application::configure(basePath: dirname(__DIR__))
     $middleware->alias([
       'permission' =>
       \App\Http\Middleware\PermissionMiddleware::class,
-      'submenu_access' => \App\http\Middleware\SubmenuAccessMiddleware::class,
+      'submenu.access' => \App\http\Middleware\SubmenuAccessMiddleware::class,
     ]);
   })
 

@@ -23,8 +23,8 @@ Route::group(
   [
     'middleware' => [
       'auth',
+      'submenu.access',
       'permission',
-      'submenu_access'
     ]
   ],
   function () {
