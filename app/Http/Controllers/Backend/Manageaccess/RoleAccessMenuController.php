@@ -12,7 +12,7 @@ class RoleAccessMenuController extends Controller
 {
   public function accessMenu($url)
   {
-    $role = Role::where('url', $url)
+    $role = Role::query()->where('url', $url)
       ->with('menus:id')
       ->firstOrFail();
 
@@ -23,7 +23,7 @@ class RoleAccessMenuController extends Controller
       ->withQueryString();
 
     return view('backend.manageaccess.role-access-menu', [
-      'title' => 'Access menu ' . $role->name,
+      'title' => "Access menu {$role->name}",
       'role' => $role,
       'menus' => $menus,
     ]);
