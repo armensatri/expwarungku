@@ -19,7 +19,6 @@ class Redirects
       'owner' => 'owner',
       'superadmin' => 'superadmin',
       'admin' => 'admin',
-      'concreat' => 'concreat',
       'member' => 'member',
     ];
 

@@ -16,7 +16,7 @@ class PermissionMiddleware
     $user = Auth::user();
 
     if (!$user || !$user->role_id) {
-      return Redirect::route('blocked-permission')->send();
+      return Redirect::route('blocked.permission')->send();
     }
 
     $routeName = $request->route()->getName();
@@ -28,7 +28,7 @@ class PermissionMiddleware
       ->exists();
 
     if (!$hasPermission) {
-      return Redirect::route('blocked-permission')->send();
+      return Redirect::route('blocked.permission')->send();
     }
 
     return $next($request);

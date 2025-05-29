@@ -12,6 +12,8 @@
       </section>
 
       <section class="w-full px-4 mt-8 mb-5">
+        @include('backend.sbreadcrumb.manageaccess.rap-accesspermission')
+
         <div class="app-cse-border">
           <div class="rounded-2xl">
             <div class="grid max-h-[350px] grid-cols-1 overflow-y-scroll gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
@@ -26,7 +28,6 @@
                       <div>
                         <div class="flex items-center">
                           <input type="checkbox"
-                            placeholder="aa"
                             data-role="{{ $role->id }}"
                             data-permission="{{ $permission->id }}"
                             data-url="{{ $role->url }}"
@@ -36,8 +37,7 @@
                         </div>
                       </div>
 
-                      <div class="flex items-center text-[15px] text-gray-600 whitespace-nowrap
-                      p-2 py-1.5 tracking-wide">
+                      <div class="flex items-center text-[15px] text-gray-600 whitespace-nowrap p-2 py-1.5 tracking-wide">
                         {{ $permission->name }}
                       </div>
                     </div>
@@ -51,18 +51,19 @@
     </div>
   </div>
 
-  {{-- <script>
+  <script>
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll(".access-checkbox").forEach((checkbox) => {
         checkbox.addEventListener("change", async function () {
 
           const roleId = this.getAttribute("data-role");
-          const roleName = this.getAttribute("data-role-name");
           const permissionId = this.getAttribute("data-permission");
+          const roleUrl = this.getAttribute("data-url");
           const isChecked = this.checked ? 1 : 0;
 
           try {
-            const response = await fetch("{{ route('ca.permission') }}", {
+            const response = await fetch(
+              "{{ route('access.up.permission') }}", {
               method: "POST",
 
               headers: {
@@ -75,6 +76,7 @@
               body: JSON.stringify({
                 role_id: roleId,
                 permission_id: permissionId,
+                role_url:roleUrl,
                 is_checked: isChecked,
               }),
             });
@@ -93,9 +95,8 @@
 
               }).then(() => {
                 window.location.href =
-                  "{{ route('a.permission', [':id', ':name']) }}"
-                  .replace(":id", roleId)
-                  .replace(":name", encodeURIComponent(roleName));
+                  "{{ route('access.permission', [':url']) }}"
+                  .replace(":url", roleUrl)
               });
 
             } else {
@@ -110,5 +111,5 @@
         });
       });
     });
-  </script> --}}
+  </script>
 @endsection

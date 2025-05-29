@@ -7,7 +7,7 @@ Route::controller(BlockedController::class)->group(
   function () {
     Route::get('/blocked', 'blocked')
       ->name('blocked');
-    Route::get('/blocked/permission', 'blockedPermission')
+    Route::get('/blocked-permission', 'blockedPermission')
       ->name('blocked.permission');
   }
 );
