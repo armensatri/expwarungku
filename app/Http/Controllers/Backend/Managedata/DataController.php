@@ -13,4 +13,25 @@ class DataController extends Controller
       'title' => 'Monitoring data system'
     ]);
   }
+
+  public function count()
+  {
+    return view('backend.managedata.data.count', [
+      'title' => 'Monitoring data count'
+    ]);
+  }
+
+  public function statistic()
+  {
+    return view('backend.managedata.data.statistic', [
+      'title' => 'Monitoring data statistic',
+    ]);
+  }
+
+  public function visitor()
+  {
+    return view('backend.managedata.data.visitor', [
+      'title' => 'Monitoring data visitor'
+    ]);
+  }
 }

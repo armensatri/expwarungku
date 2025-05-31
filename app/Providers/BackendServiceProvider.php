@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use App\View\Components\Backend\Pagination\Pagination;
+use App\View\Components\Backend\Data\DataHeader;
 
 use App\View\Components\Backend\Button\{
   Button,
@@ -124,5 +125,8 @@ class BackendServiceProvider extends ServiceProvider
     Blade::component('breadcrumb-icon', BreadcrumbIcon::class);
     Blade::component('breadcrumb-name', BreadcrumbName::class);
     Blade::component('slash', Slash::class);
+
+    // DATA
+    Blade::component('data-header', DataHeader::class);
   }
 }

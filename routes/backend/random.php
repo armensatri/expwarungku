@@ -21,7 +21,9 @@ Route::group(
      * */
     Route::controller(DataController::class)->group(
       function () {
-        Route::get('/example', 'example')->name('data.example');
+        Route::get('/data/count', 'count')->name('data.count');
+        Route::get('/data/statistic', 'statistic')->name('data.statistic');
+        Route::get('/data/visitor', 'visitor')->name('data.visitor');
       }
     );
   }

@@ -12,22 +12,22 @@
       </section>
 
       <section class="w-full px-4 mt-8 mb-5">
-        @include('backend.sbreadcrumb.data.index')
+        @include('backend.sbreadcrumb.data.statistic')
 
         <div class="app-cse-border">
           <x-data-header
             image="/image/default.png"
-            alt="data-system"
-            title="Data system"
-            description="Pusat informasi monitoring data system"
+            alt="data-statistic"
+            title="Data statistic"
+            description="Visualisasi data berdasarkan statistic system"
           />
 
           @include('backend.managedata.data._navigation')
 
-          <div class="max-w-3xl mx-auto">
-            <div class="mt-8 text-gray-600">
+          <div class="max-w-6xl mx-auto">
+            <div class="mt-8">
               <div class="content">
-                <h3 class="mb-4 text-lg font-semibold">Count</h3>
+                <h3 class="mb-4 text-lg font-semibold">Statistic</h3>
               </div>
             </div>
           </div>
@@ -36,3 +36,4 @@
     </div>
   </div>
 @endSection
+
