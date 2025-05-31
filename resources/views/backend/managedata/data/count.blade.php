@@ -26,7 +26,9 @@
 
           <div class="max-w-6xl mx-auto">
             <div class="mt-8">
-              <h3 class="mb-4 text-lg font-semibold">Count</h3>
+              <div class="content">
+                <h3 class="mb-4 text-lg font-semibold">Count</h3>
+              </div>
             </div>
           </div>
         </div>
