@@ -7,11 +7,11 @@
   />
 
   <div class="grow">
-    <div class="text-base font-bold text-gray-800 dark:text-neutral-200">
+    <div class="text-base font-bold text-gray-800">
       {{ $menu }}
     </div>
 
-    <div class="text-[15px] font-medium text-gray-600 dark:text-neutral-500 tracking-tight">
+    <div class="text-[15px] font-medium text-gray-600 tracking-tight">
       {{ $description }}
     </div>
   </div>

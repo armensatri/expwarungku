@@ -5,7 +5,6 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use App\View\Components\Backend\Pagination\Pagination;
-use App\View\Components\Backend\Data\DataHeader;
 
 use App\View\Components\Backend\Button\{
   Button,
@@ -62,6 +61,11 @@ use App\View\Components\Backend\Breadcrumb\{
   BreadcrumbIcon,
   BreadcrumbName,
   Slash,
+};
+
+use App\View\Components\Backend\Data\{
+  DataHeader,
+  CountCard,
 };
 
 class BackendServiceProvider extends ServiceProvider
@@ -128,5 +132,6 @@ class BackendServiceProvider extends ServiceProvider
 
     // DATA
     Blade::component('data-header', DataHeader::class);
+    Blade::component('count-card', CountCard::class);
   }
 }

@@ -25,7 +25,7 @@
           @include('backend.managedata.data._navigation')
 
           <div class="max-w-6xl mx-auto">
-            <div class="mt-8">
+            <div class="mt-16">
               <h3 class="mb-4 text-lg font-semibold">Visitor</h3>
             </div>
           </div>

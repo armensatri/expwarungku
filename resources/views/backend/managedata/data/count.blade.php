@@ -25,9 +25,56 @@
           @include('backend.managedata.data._navigation')
 
           <div class="max-w-6xl mx-auto">
-            <div class="mt-8">
+            <div class="mt-16">
               <div class="content">
-                <h3 class="mb-4 text-lg font-semibold">Count</h3>
+                <div class="max-w-screen-xl px-4 mx-auto text-center">
+                  <div class="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+                    <x-count-card
+                      hover="users"
+                      :route="route('users.index')"
+                      image="/backend/img/menu/users.jpg"
+                      alt="data-users"
+                      data-name="Data users"
+                      :data-count="$users"
+                    />
+
+                    <x-count-card
+                      hover="roles"
+                      :route="route('roles.index')"
+                      image="/backend/img/menu/roles.jpg"
+                      alt="data-roles"
+                      data-name="Data roles"
+                      :data-count="$roles"
+                    />
+
+                    <x-count-card
+                      hover="permissions"
+                      :route="route('permissions.index')"
+                      image="/backend/img/menu/permissions.jpg"
+                      alt="data-permissions"
+                      data-name="Data permissions"
+                      :data-count="$permissions"
+                    />
+
+                    <x-count-card
+                      hover="menus"
+                      :route="route('menus.index')"
+                      image="/backend/img/menu/menus.jpg"
+                      alt="data-menus"
+                      data-name="Data menus"
+                      :data-count="$menus"
+                    />
+
+                    <x-count-card
+                      hover="submenus"
+                      :route="route('submenus.index')"
+                      image="/backend/img/menu/submenus.jpg"
+                      alt="data-submenus"
+                      data-name="Data submenus"
+                      :data-count="$submenus"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

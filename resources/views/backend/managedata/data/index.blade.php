@@ -25,9 +25,11 @@
           @include('backend.managedata.data._navigation')
 
           <div class="max-w-6xl mx-auto">
-            <div class="mt-8">
-              <div class="content">
-                <h3 class="mb-4 text-lg font-semibold">Data</h3>
+            <div class="mt-16">
+              <div class="text-gray-600 content">
+                <div class="max-w-2xl mx-auto text-center">
+                  pusat informasi dan monitoring terpadu untuk sistem data. menyediakan akses cepat dan real-time terhadap data penting, mempermudah pemantauan, analisis, serta pengambilan keputusan berbasis data secara efisien dan terintegrasi.
+                </div>
               </div>
             </div>
           </div>
