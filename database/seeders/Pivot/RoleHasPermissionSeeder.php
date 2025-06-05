@@ -55,7 +55,11 @@ class RoleHasPermissionSeeder extends Seeder
         'access.up.permission',
 
         'data',
+        'visitor',
+        'device',
         'access',
+        'statistik',
+        'log.data',
 
         'menus.index',
         'menus.create',
@@ -128,7 +132,11 @@ class RoleHasPermissionSeeder extends Seeder
         'access.up.permission',
 
         'data',
+        'visitor',
+        'device',
         'access',
+        'statistik',
+        'log.data',
 
         'menus.index',
         'menus.create',
@@ -201,7 +209,11 @@ class RoleHasPermissionSeeder extends Seeder
         // 'access.up.permission',
 
         // 'data',
+        // 'visitor',
+        // 'device',
         // 'access',
+        // 'statistik',
+        // 'log.data',
 
         // 'menus.index',
         // 'menus.create',
@@ -274,7 +286,11 @@ class RoleHasPermissionSeeder extends Seeder
         // 'access.up.permission',
 
         // 'data',
+        // 'visitor',
+        // 'device',
         // 'access',
+        // 'statistik',
+        // 'log.data',
 
         // 'menus.index',
         // 'menus.create',

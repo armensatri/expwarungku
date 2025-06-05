@@ -99,17 +99,57 @@ class SubmenuSeeder extends Seeder
         'route' => '/data',
         'active' => 'data',
         'routename' => '/data',
-        'description' => 'data monitoring'
+        'description' => 'data count'
       ],
       [
         'menu_id' => 6,
         'ssm' => 2,
+        'name' => 'visitor',
+        'slug' => 'visitor',
+        'route' => '/visitor',
+        'active' => 'visitor',
+        'routename' => '/visitor',
+        'description' => 'data online or offline'
+      ],
+      [
+        'menu_id' => 6,
+        'ssm' => 3,
+        'name' => 'device',
+        'slug' => 'device',
+        'route' => '/device',
+        'active' => 'device',
+        'routename' => '/device',
+        'description' => 'data device user'
+      ],
+      [
+        'menu_id' => 6,
+        'ssm' => 4,
         'name' => 'access',
         'slug' => 'access',
         'route' => '/access',
         'active' => 'access',
         'routename' => '/access',
         'description' => 'pengelolaan access'
+      ],
+      [
+        'menu_id' => 6,
+        'ssm' => 5,
+        'name' => 'statistik',
+        'slug' => 'statistik',
+        'route' => '/statistik',
+        'active' => 'statistik',
+        'routename' => '/statistik',
+        'description' => 'data statistik'
+      ],
+      [
+        'menu_id' => 6,
+        'ssm' => 6,
+        'name' => 'log data',
+        'slug' => 'log-data',
+        'route' => '/logdata',
+        'active' => 'logdata',
+        'routename' => '/logdata',
+        'description' => 'log data'
       ],
 
       // MANAGEUSER

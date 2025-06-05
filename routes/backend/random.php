@@ -15,15 +15,13 @@ Route::group(
   ],
   function () {
     /**
-     * * MENU {MANAGEDATA}
-     * * SUBMENU {DATA} & {DataController}
-     * * METHOD TAMBAHAN DI SUBMENU {DATA} & {DataController}
+     * * MENU {?}
+     * * SUBMENU {?} & {?Controller}
+     * * METHOD TAMBAHAN DI SUBMENU {?} & {?Controller}
      * */
     Route::controller(DataController::class)->group(
       function () {
-        Route::get('/data/count', 'count')->name('data.count');
-        Route::get('/data/statistic', 'statistic')->name('data.statistic');
-        Route::get('/data/visitor', 'visitor')->name('data.visitor');
+        //
       }
     );
   }

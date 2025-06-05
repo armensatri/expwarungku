@@ -12,7 +12,7 @@
       </section>
 
       <section class="w-full px-4 mt-8 mb-5">
-        {{-- content backend --}} data count
+        {{-- content backend --}} visitor
       </section>
     </div>
   </div>
