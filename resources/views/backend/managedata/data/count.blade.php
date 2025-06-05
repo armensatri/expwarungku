@@ -28,7 +28,7 @@
             <div class="mt-16">
               <div class="content">
                 <div class="max-w-screen-xl px-4 mx-auto text-center">
-                  <div class="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+                  <div class="grid gap-8 lg:gap-16 sm:grid-cols-2 xl:grid-cols-3">
                     <x-count-card
                       hover="users"
                       :route="route('users.index')"

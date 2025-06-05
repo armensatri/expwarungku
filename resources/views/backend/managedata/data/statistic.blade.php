@@ -27,7 +27,13 @@
           <div class="max-w-6xl mx-auto">
             <div class="mt-16">
               <div class="content">
-                <h3 class="mb-4 text-lg font-semibold">Statistic</h3>
+                <div class="p-6 mb-8 border border-gray-200 rounded-3xl">
+                  <h2 class="mb-4 text-lg font-semibold text-gray-700">
+                    Data system
+                  </h2>
+                  <div id="chart" class="w-full h-64">
+                  </div>
+                </div>
               </div>
             </div>
           </div>
