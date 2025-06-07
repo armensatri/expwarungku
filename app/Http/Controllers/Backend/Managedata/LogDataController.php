@@ -10,7 +10,7 @@ class LogDataController extends Controller
   public function index()
   {
     return view('backend.managedata.logdata.index', [
-      'title' => 'Managedata log data'
+      'title' => 'Log data'
     ]);
   }
 }

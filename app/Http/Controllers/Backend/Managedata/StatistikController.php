@@ -10,7 +10,7 @@ class StatistikController extends Controller
   public function index()
   {
     return view('backend.managedata.statistik.index', [
-      'title' => 'Managedata statistik'
+      'title' => 'Statistik'
     ]);
   }
 }

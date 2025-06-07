@@ -39,6 +39,11 @@
                 active="visitor/offline"
                 menu-name="offline"
               />
+              <x-md-navigation
+                route=""
+                active="visitor/banned"
+                menu-name="banned"
+              />
             </div>
           </div>
 
@@ -133,7 +138,7 @@
 
                                     <td class="h-px whitespace-nowrap">
                                       <x-td-var
-                                        var="20:20 01-10-2025"
+                                        :var="\Carbon\Carbon::parse($user->last_seen)->diffForHumans()"
                                       />
                                     </td>
                                   </tr>

@@ -36,6 +36,6 @@ Route::group(
       ->name('statistik');
 
     Route::get('/logdata', [LogDataController::class, 'index'])
-      ->name('log.data');
+      ->name('logdata');
   }
 );

@@ -10,7 +10,7 @@ class DeviceController extends Controller
   public function index()
   {
     return view('backend.managedata.device.index', [
-      'title' => 'Managedata device'
+      'title' => 'Device'
     ]);
   }
 }

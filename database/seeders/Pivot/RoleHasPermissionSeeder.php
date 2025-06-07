@@ -63,7 +63,7 @@ class RoleHasPermissionSeeder extends Seeder
         'device',
         'access',
         'statistik',
-        'log.data',
+        'logdata',
 
         'menus.index',
         'menus.create',
@@ -144,7 +144,7 @@ class RoleHasPermissionSeeder extends Seeder
         'device',
         'access',
         'statistik',
-        'log.data',
+        'logdata',
 
         'menus.index',
         'menus.create',

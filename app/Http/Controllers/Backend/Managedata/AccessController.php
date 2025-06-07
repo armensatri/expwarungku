@@ -10,7 +10,7 @@ class AccessController extends Controller
   public function index()
   {
     return view('backend.managedata.access.index', [
-      'title' => 'Managedata access'
+      'title' => 'Access'
     ]);
   }
 }

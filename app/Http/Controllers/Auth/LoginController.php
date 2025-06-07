@@ -40,6 +40,11 @@ class LoginController extends Controller
     if (Auth::attempt($datastore)) {
       $request->session()->regenerate();
 
+      User::where('id', Auth::user()->id)->update([
+        'status' => 1,
+        'last_seen' => now(),
+      ]);
+
       RateLimiter::clear($key);
 
       $mapRoutes = [

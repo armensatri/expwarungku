@@ -20,6 +20,7 @@ return new class extends Migration
         ->cascadeOnDelete()
         ->cascadeOnUpdate();
       $table->boolean('status')->default(0);
+      $table->timestamp('last_seen')->nullable();
       $table->string('url', 5)->unique();
       $table->timestamps();
     });
