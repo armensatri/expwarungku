@@ -20,7 +20,6 @@ Route::group(
     ]
   ],
   function () {
-    // data visitor device access statistik log-data
     Route::get('/data', [DataController::class, 'index'])
       ->name('data');
 

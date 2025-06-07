@@ -21,7 +21,11 @@ class MenuIcon
 
       // MANAGEDATA
       'data' => 'data.png',
+      'visitor' => 'visitor.jpg',
+      'device' => 'device.png',
       'access' => 'access.png',
+      'statistik' => 'statistik.jpg',
+      'log data' => 'log-data.png',
 
       // MANAGEUSER
       'users' => 'users.jpg',

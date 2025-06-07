@@ -63,9 +63,10 @@ use App\View\Components\Backend\Breadcrumb\{
   Slash,
 };
 
-use App\View\Components\Backend\Data\{
-  DataHeader,
-  CountCard,
+use App\View\Components\Backend\Md\{
+  CardCount,
+  MdHeader,
+  MdNavigation,
 };
 
 class BackendServiceProvider extends ServiceProvider
@@ -130,8 +131,9 @@ class BackendServiceProvider extends ServiceProvider
     Blade::component('breadcrumb-name', BreadcrumbName::class);
     Blade::component('slash', Slash::class);
 
-    // DATA
-    Blade::component('data-header', DataHeader::class);
-    Blade::component('count-card', CountCard::class);
+    // MD
+    Blade::component('md-header', MdHeader::class);
+    Blade::component('md-navigation', MdNavigation::class);
+    Blade::component('card-count', CardCount::class);
   }
 }

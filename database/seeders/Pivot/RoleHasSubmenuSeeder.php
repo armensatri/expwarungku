@@ -2,9 +2,9 @@
 
 namespace Database\Seeders\Pivot;
 
-use App\Models\Managemenu\Submenu;
 use Illuminate\Database\Seeder;
 use App\Models\Manageuser\Role;
+use App\Models\Managemenu\Submenu;
 
 class RoleHasSubmenuSeeder extends Seeder
 {

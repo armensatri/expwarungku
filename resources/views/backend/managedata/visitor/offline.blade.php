@@ -12,7 +12,7 @@
       </section>
 
       <section class="w-full px-4 mt-8 mb-5">
-        @include('backend.sbreadcrumb.managedata.visitor')
+        @include('backend.sbreadcrumb.managedata.visitor-offline')
 
         <div class="app-cse-border">
           <x-md-header
@@ -61,7 +61,7 @@
                                 <div class="inline-flex items-center gap-x-2">
                                   <div class="refresh">
                                     <x-refresh
-                                      :route="route('visitor')"
+                                      :route="route('visitor.offline')"
                                     />
                                   </div>
                                 </div>

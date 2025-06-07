@@ -55,7 +55,11 @@ class RoleHasPermissionSeeder extends Seeder
         'access.up.permission',
 
         'data',
+
         'visitor',
+        'visitor.online',
+        'visitor.offline',
+
         'device',
         'access',
         'statistik',
@@ -132,7 +136,11 @@ class RoleHasPermissionSeeder extends Seeder
         'access.up.permission',
 
         'data',
+
         'visitor',
+        'visitor.online',
+        'visitor.offline',
+
         'device',
         'access',
         'statistik',

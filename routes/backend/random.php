@@ -2,9 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Backend\Managedata\{
-  DataController,
-};
+use App\Http\Controllers\Backend\Managedata\VisitorController;
 
 Route::group(
   [
@@ -15,13 +13,16 @@ Route::group(
   ],
   function () {
     /**
-     * * MENU {?}
-     * * SUBMENU {?} & {?Controller}
-     * * METHOD TAMBAHAN DI SUBMENU {?} & {?Controller}
+     * * MENU {MANAGEDATA}
+     * * SUBMENU {VISITOR} & {VisitorController}
+     * * METHOD TAMBAHAN DI SUBMENU {VISITOR} & {VisitorController}
      * */
-    Route::controller(DataController::class)->group(
+    Route::controller(VisitorController::class)->group(
       function () {
-        //
+        Route::get('/visitor/online', 'online')
+          ->name('visitor.online');
+        Route::get('/visitor/offline', 'offline')
+          ->name('visitor.offline');
       }
     );
   }
