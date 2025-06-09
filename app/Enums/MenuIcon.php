@@ -24,8 +24,9 @@ class MenuIcon
       'visitor' => 'visitor.jpg',
       'device' => 'device.png',
       'access' => 'access.png',
+      'logdata' => 'logdata.png',
       'statistik' => 'statistik.jpg',
-      'log data' => 'log-data.png',
+      'verification' => 'verification.png',
 
       // MANAGEUSER
       'users' => 'users.jpg',
@@ -35,6 +36,9 @@ class MenuIcon
       // MANAGEMENU
       'menus' => 'menus.jpg',
       'submenus' => 'submenus.jpg',
+
+      // PUBLISHED
+      'statuses' => 'statuses.jpg',
     ];
 
     $filename = $icons[strtolower($name)] ?? '';

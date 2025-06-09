@@ -2,9 +2,9 @@
 
 namespace Database\Seeders\Pivot;
 
-use App\Models\Manageuser\Permission;
-use App\Models\Manageuser\Role;
 use Illuminate\Database\Seeder;
+use App\Models\Manageuser\Role;
+use App\Models\Manageuser\Permission;
 
 class RoleHasPermissionSeeder extends Seeder
 {
@@ -62,8 +62,9 @@ class RoleHasPermissionSeeder extends Seeder
 
         'device',
         'access',
-        'statistik',
         'logdata',
+        'statistik',
+        'verification',
 
         'menus.index',
         'menus.create',
@@ -104,6 +105,14 @@ class RoleHasPermissionSeeder extends Seeder
         'permissions.edit',
         'permissions.update',
         'permissions.destroy',
+
+        'statuses.index',
+        'statuses.create',
+        'statuses.store',
+        'statuses.show',
+        'statuses.edit',
+        'statuses.update',
+        'statuses.destroy',
       ],
 
       'superadmin' => [
@@ -143,8 +152,9 @@ class RoleHasPermissionSeeder extends Seeder
 
         'device',
         'access',
-        'statistik',
         'logdata',
+        'statistik',
+        'verification',
 
         'menus.index',
         'menus.create',
@@ -185,6 +195,14 @@ class RoleHasPermissionSeeder extends Seeder
         'permissions.edit',
         'permissions.update',
         'permissions.destroy',
+
+        'statuses.index',
+        'statuses.create',
+        'statuses.store',
+        'statuses.show',
+        'statuses.edit',
+        'statuses.update',
+        'statuses.destroy',
       ],
 
       'admin' => [
@@ -217,11 +235,16 @@ class RoleHasPermissionSeeder extends Seeder
         // 'access.up.permission',
 
         // 'data',
+
         // 'visitor',
+        // 'visitor.online',
+        // 'visitor.offline',
+
         // 'device',
         // 'access',
+        // 'logdata',
         // 'statistik',
-        // 'log.data',
+        // 'verification',
 
         // 'menus.index',
         // 'menus.create',
@@ -262,6 +285,14 @@ class RoleHasPermissionSeeder extends Seeder
         // 'permissions.edit',
         // 'permissions.update',
         // 'permissions.destroy',
+
+        // 'statuses.index',
+        // 'statuses.create',
+        // 'statuses.store',
+        // 'statuses.show',
+        // 'statuses.edit',
+        // 'statuses.update',
+        // 'statuses.destroy',
       ],
 
       'member' => [
@@ -294,11 +325,16 @@ class RoleHasPermissionSeeder extends Seeder
         // 'access.up.permission',
 
         // 'data',
+
         // 'visitor',
+        // 'visitor.online',
+        // 'visitor.offline',
+
         // 'device',
         // 'access',
+        // 'logdata',
         // 'statistik',
-        // 'log.data',
+        // 'verification',
 
         // 'menus.index',
         // 'menus.create',
@@ -339,6 +375,14 @@ class RoleHasPermissionSeeder extends Seeder
         // 'permissions.edit',
         // 'permissions.update',
         // 'permissions.destroy',
+
+        // 'statuses.index',
+        // 'statuses.create',
+        // 'statuses.store',
+        // 'statuses.show',
+        // 'statuses.edit',
+        // 'statuses.update',
+        // 'statuses.destroy',
       ],
     ];
 

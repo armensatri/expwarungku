@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend\Managedata;
 
 use Illuminate\Http\Request;
+use App\Models\Published\Status;
 use App\Http\Controllers\Controller;
 
 use App\Models\Manageuser\{
@@ -27,6 +28,7 @@ class DataController extends Controller
       'permissions' => Permission::count(),
       'menus' => Menu::count(),
       'submenus' => Submenu::count(),
+      'statuses' => Status::count(),
     ]);
   }
 }

@@ -73,6 +73,15 @@
                       data-name="Data submenus"
                       :data-count="$submenus"
                     />
+
+                    <x-card-count
+                      hover="statuses"
+                      :route="route('statuses.index')"
+                      img="/backend/img/menu/statuses.jpg"
+                      alt="statuses"
+                      data-name="Data statuses"
+                      :data-count="$statuses"
+                    />
                   </div>
                 </div>
               </div>

@@ -26,6 +26,7 @@ class RoleHasMenuSeeder extends Seeder
       'managedata',
       'manageuser',
       'managemenu',
+      'published',
     ])->get()->keyBy('name');
 
     $roleHasMenus = [
@@ -38,6 +39,7 @@ class RoleHasMenuSeeder extends Seeder
         'managedata',
         'manageuser',
         'managemenu',
+        'published',
       ],
 
       'superadmin' => [
@@ -49,6 +51,7 @@ class RoleHasMenuSeeder extends Seeder
         'managedata',
         'manageuser',
         'managemenu',
+        'published',
       ],
 
       'admin' => [
@@ -60,6 +63,7 @@ class RoleHasMenuSeeder extends Seeder
         // 'managedata',
         // 'manageuser',
         // 'managemenu',
+        // 'published',
       ],
 
       'member' => [
@@ -71,6 +75,7 @@ class RoleHasMenuSeeder extends Seeder
         // 'managedata',
         // 'manageuser',
         // 'managemenu',
+        // 'published',
       ],
     ];
 

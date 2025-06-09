@@ -134,6 +134,16 @@ class SubmenuSeeder extends Seeder
       [
         'menu_id' => 6,
         'ssm' => 5,
+        'name' => 'logdata',
+        'slug' => 'logdata',
+        'route' => '/logdata',
+        'active' => 'logdata',
+        'routename' => '/logdata',
+        'description' => 'log data'
+      ],
+      [
+        'menu_id' => 6,
+        'ssm' => 6,
         'name' => 'statistik',
         'slug' => 'statistik',
         'route' => '/statistik',
@@ -143,13 +153,13 @@ class SubmenuSeeder extends Seeder
       ],
       [
         'menu_id' => 6,
-        'ssm' => 6,
-        'name' => 'log data',
-        'slug' => 'log-data',
-        'route' => '/logdata',
-        'active' => 'logdata',
-        'routename' => '/logdata',
-        'description' => 'log data'
+        'ssm' => 7,
+        'name' => 'verification',
+        'slug' => 'verification',
+        'route' => '/verification',
+        'active' => 'verification',
+        'routename' => '/verification',
+        'description' => 'user verification'
       ],
 
       // MANAGEUSER
@@ -204,6 +214,17 @@ class SubmenuSeeder extends Seeder
         'active' => 'submenus',
         'routename' => '/submenus',
         'description' => 'data submenus'
+      ],
+
+      [
+        'menu_id' => 9,
+        'ssm' => 1,
+        'name' => 'statuses',
+        'slug' => 'statuses',
+        'route' => '/statuses',
+        'active' => 'statuses',
+        'routename' => '/statuses',
+        'description' => 'data statuses'
       ],
     ];
 

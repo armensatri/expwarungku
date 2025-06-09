@@ -32,10 +32,12 @@ Route::group(
     Route::get('/access', [AccessController::class, 'index'])
       ->name('access');
 
+    Route::get('/logdata', [LogDataController::class, 'index'])
+      ->name('logdata');
+
     Route::get('/statistik', [StatistikController::class, 'index'])
       ->name('statistik');
 
-    Route::get('/logdata', [LogDataController::class, 'index'])
-      ->name('logdata');
+    // Route::get('/verification')
   }
 );

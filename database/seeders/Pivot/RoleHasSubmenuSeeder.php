@@ -28,8 +28,9 @@ class RoleHasSubmenuSeeder extends Seeder
       'visitor',
       'device',
       'access',
+      'logdata',
       'statistik',
-      'log data',
+      'verification',
 
       // MANAGEUSER
       'users',
@@ -38,7 +39,10 @@ class RoleHasSubmenuSeeder extends Seeder
 
       // MANAGEMENU
       'menus',
-      'submenus'
+      'submenus',
+
+      // PUBLISHED
+      'statuses',
     ])->get()->keyBy('name');
 
     $roleHasSubmenus = [
@@ -53,8 +57,9 @@ class RoleHasSubmenuSeeder extends Seeder
         'visitor',
         'device',
         'access',
+        'logdata',
         'statistik',
-        'log data',
+        'verification',
 
         // MANAGEUSER
         'users',
@@ -63,7 +68,10 @@ class RoleHasSubmenuSeeder extends Seeder
 
         // MANAGEMENU
         'menus',
-        'submenus'
+        'submenus',
+
+        // PUBLISHED
+        'statuses',
       ],
 
       'superadmin' => [
@@ -77,8 +85,9 @@ class RoleHasSubmenuSeeder extends Seeder
         'visitor',
         'device',
         'access',
+        'logdata',
         'statistik',
-        'log data',
+        'verification',
 
         // MANAGEUSER
         'users',
@@ -87,7 +96,10 @@ class RoleHasSubmenuSeeder extends Seeder
 
         // MANAGEMENU
         'menus',
-        'submenus'
+        'submenus',
+
+        // PUBLISHED
+        'statuses',
       ],
 
       'admin' => [
@@ -101,8 +113,9 @@ class RoleHasSubmenuSeeder extends Seeder
         // 'visitor',
         // 'device',
         // 'access',
+        // 'logdata',
         // 'statistik',
-        // 'log data',
+        // 'verification',
 
         // MANAGEUSER
         // 'users',
@@ -111,7 +124,10 @@ class RoleHasSubmenuSeeder extends Seeder
 
         // MANAGEMENU
         // 'menus',
-        // 'submenus'
+        // 'submenus',
+
+        // PUBLISHED
+        // 'statuses',
       ],
 
       'member' => [
@@ -125,8 +141,9 @@ class RoleHasSubmenuSeeder extends Seeder
         // 'visitor',
         // 'device',
         // 'access',
+        // 'logdata',
         // 'statistik',
-        // 'log data',
+        // 'verification',
 
         // MANAGEUSER
         // 'users',
@@ -135,7 +152,10 @@ class RoleHasSubmenuSeeder extends Seeder
 
         // MANAGEMENU
         // 'menus',
-        // 'submenus'
+        // 'submenus',
+
+        // PUBLISHED
+        // 'statuses',
       ],
     ];
 

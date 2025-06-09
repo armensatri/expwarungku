@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Database\Seeders\Published\StatusSeeder;
 
 use Database\Seeders\Manageuser\{
   UserSeeder,
@@ -34,6 +35,7 @@ class DatabaseSeeder extends Seeder
       RoleHasSubmenuSeeder::class,
       PermissionSeeder::class,
       RoleHasPermissionSeeder::class,
+      StatusSeeder::class,
     ]);
   }
 }

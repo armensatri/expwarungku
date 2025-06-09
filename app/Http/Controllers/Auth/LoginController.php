@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\Login\LoginSr;
 use App\Models\Manageuser\User;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\RateLimiter;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Requests\Auth\Login\LoginSr;
+use Illuminate\Support\Facades\RateLimiter;
 
 class LoginController extends Controller
 {

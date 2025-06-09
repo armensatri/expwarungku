@@ -65,6 +65,13 @@ class MenuSeeder extends Seeder
         'slug' => 'managemenu',
         'description' => 'menu pengelolaan access menu'
       ],
+
+      [
+        'sm' => 8,
+        'name' => 'published',
+        'slug' => 'published',
+        'description' => 'menu pengelolaan data publish'
+      ],
     ];
 
     foreach ($menus as $menu) {
