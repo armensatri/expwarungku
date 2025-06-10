@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\Published\Status\StatusSr;
 use App\Http\Requests\Published\Status\StatusUr;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class StatusesController extends Controller
 {
@@ -34,7 +35,9 @@ class StatusesController extends Controller
    */
   public function create()
   {
-    //
+    return view('backend.published.statuses.create', [
+      'title' => 'Create data status'
+    ]);
   }
 
   /**
@@ -75,5 +78,19 @@ class StatusesController extends Controller
   public function destroy(Status $status)
   {
     //
+  }
+
+  /**
+   * Generate resource slug otomatis.
+   */
+  public function slug(Request $request)
+  {
+    $slug = SlugService::createSlug(
+      Status::class,
+      'slug',
+      $request->name
+    );
+
+    return response()->json(['slug' => $slug]);
   }
 }

@@ -37,7 +37,5 @@ Route::group(
 
     Route::get('/statistik', [StatistikController::class, 'index'])
       ->name('statistik');
-
-    // Route::get('/verification')
   }
 );

@@ -151,16 +151,6 @@ class SubmenuSeeder extends Seeder
         'routename' => '/statistik',
         'description' => 'data statistik'
       ],
-      [
-        'menu_id' => 6,
-        'ssm' => 7,
-        'name' => 'verification',
-        'slug' => 'verification',
-        'route' => '/verification',
-        'active' => 'verification',
-        'routename' => '/verification',
-        'description' => 'user verification'
-      ],
 
       // MANAGEUSER
       [

@@ -30,7 +30,6 @@ class RoleHasSubmenuSeeder extends Seeder
       'access',
       'logdata',
       'statistik',
-      'verification',
 
       // MANAGEUSER
       'users',
@@ -59,7 +58,6 @@ class RoleHasSubmenuSeeder extends Seeder
         'access',
         'logdata',
         'statistik',
-        'verification',
 
         // MANAGEUSER
         'users',
@@ -87,7 +85,6 @@ class RoleHasSubmenuSeeder extends Seeder
         'access',
         'logdata',
         'statistik',
-        'verification',
 
         // MANAGEUSER
         'users',
@@ -115,7 +112,6 @@ class RoleHasSubmenuSeeder extends Seeder
         // 'access',
         // 'logdata',
         // 'statistik',
-        // 'verification',
 
         // MANAGEUSER
         // 'users',
@@ -143,7 +139,6 @@ class RoleHasSubmenuSeeder extends Seeder
         // 'access',
         // 'logdata',
         // 'statistik',
-        // 'verification',
 
         // MANAGEUSER
         // 'users',

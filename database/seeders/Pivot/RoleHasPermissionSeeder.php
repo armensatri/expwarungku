@@ -64,7 +64,6 @@ class RoleHasPermissionSeeder extends Seeder
         'access',
         'logdata',
         'statistik',
-        'verification',
 
         'menus.index',
         'menus.create',
@@ -154,7 +153,6 @@ class RoleHasPermissionSeeder extends Seeder
         'access',
         'logdata',
         'statistik',
-        'verification',
 
         'menus.index',
         'menus.create',
@@ -244,7 +242,6 @@ class RoleHasPermissionSeeder extends Seeder
         // 'access',
         // 'logdata',
         // 'statistik',
-        // 'verification',
 
         // 'menus.index',
         // 'menus.create',
@@ -334,7 +331,6 @@ class RoleHasPermissionSeeder extends Seeder
         // 'access',
         // 'logdata',
         // 'statistik',
-        // 'verification',
 
         // 'menus.index',
         // 'menus.create',
