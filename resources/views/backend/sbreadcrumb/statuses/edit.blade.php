@@ -1,15 +1,15 @@
 <ol class="flex items-center gap-[5px] mb-5 ml-2">
   <x-breadcrumb-icon
-    image="/backend/img/menu/menus.jpg"
+    image="/backend/img/menu/statuses.jpg"
   />
 
   <x-slash/>
 
-  <x-breadcrumb-name name="menus"/>
+  <x-breadcrumb-name name="statuses"/>
 
   <x-slash/>
 
-  <x-breadcrumb-name :name="$menu->slug"/>
+  <x-breadcrumb-name :name="$status->slug"/>
 
   <x-slash/>
 

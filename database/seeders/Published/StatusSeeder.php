@@ -25,7 +25,7 @@ class StatusSeeder extends Seeder
         'slug' => 'up-comming',
         'bg' => 'bg-red-200',
         'text' => 'text-red-800',
-        'description' => 'yang akan datang | belum bisa di akses'
+        'description' => 'yang akan datang | no access'
       ],
 
       [
@@ -34,7 +34,7 @@ class StatusSeeder extends Seeder
         'slug' => 'on-progress',
         'bg' => 'bg-yellow-200',
         'text' => 'text-yellow-800',
-        'description' => 'tahap pengembangan | belum bisa di akses'
+        'description' => 'tahap pengembangan | no access'
       ],
 
       [
@@ -43,7 +43,7 @@ class StatusSeeder extends Seeder
         'slug' => 'done',
         'bg' => 'bg-green-200',
         'text' => 'text-green-800',
-        'description' => 'pengembangan selesai | belum bisa di akses'
+        'description' => 'pengembangan selesai | no access'
       ],
 
       [
@@ -52,7 +52,7 @@ class StatusSeeder extends Seeder
         'slug' => 'explore',
         'bg' => 'bg-blue-200',
         'text' => 'text-blue-800',
-        'description' => 'explore | belajar sekarang juga'
+        'description' => 'explore | learn now'
       ],
 
       [

@@ -65,7 +65,7 @@
             />
 
             <x-show-data
-              name="Text"
+              name="Text color"
               :var="$role->text"
             />
 
