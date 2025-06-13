@@ -22,6 +22,8 @@ return Application::configure(basePath: dirname(__DIR__))
       __DIR__ . '/../routes/backend/published.php',
       __DIR__ . '/../routes/backend/random.php',
 
+      __DIR__ . '/../routes/sources/pointofsales.php',
+
       __DIR__ . '/../routes/frontend/home.php',
     ],
   )

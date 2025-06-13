@@ -216,6 +216,109 @@ class SubmenuSeeder extends Seeder
         'routename' => '/statuses',
         'description' => 'data statuses'
       ],
+
+      [
+        'menu_id' => 10,
+        'ssm' => 1,
+        'name' => 'products',
+        'slug' => 'products',
+        'route' => '-',
+        'active' => '-',
+        'routename' => '-',
+        'description' => '-'
+      ],
+      [
+        'menu_id' => 10,
+        'ssm' => 2,
+        'name' => 'members',
+        'slug' => 'members',
+        'route' => '-',
+        'active' => '-',
+        'routename' => '-',
+        'description' => '-'
+      ],
+      [
+        'menu_id' => 10,
+        'ssm' => 3,
+        'name' => 'suppliers',
+        'slug' => 'suppliers',
+        'route' => '-',
+        'active' => '-',
+        'routename' => '-',
+        'description' => '-'
+      ],
+      [
+        'menu_id' => 10,
+        'ssm' => 4,
+        'name' => 'categories',
+        'slug' => 'categories',
+        'route' => '-',
+        'active' => '-',
+        'routename' => '-',
+        'description' => '-'
+      ],
+
+      [
+        'menu_id' => 11,
+        'ssm' => 1,
+        'name' => 'penjualan',
+        'slug' => 'penjualan',
+        'route' => '-',
+        'active' => '-',
+        'routename' => '-',
+        'description' => '-'
+      ],
+      [
+        'menu_id' => 11,
+        'ssm' => 2,
+        'name' => 'pembelian',
+        'slug' => 'pembelian',
+        'route' => '-',
+        'active' => '-',
+        'routename' => '-',
+        'description' => '-'
+      ],
+      [
+        'menu_id' => 11,
+        'ssm' => 3,
+        'name' => 'pengeluaran',
+        'slug' => 'pengeluaran',
+        'route' => '-',
+        'active' => '-',
+        'routename' => '-',
+        'description' => '-'
+      ],
+      [
+        'menu_id' => 11,
+        'ssm' => 4,
+        'name' => 'transaksi lama',
+        'slug' => 'transaksi-lama',
+        'route' => '-',
+        'active' => '-',
+        'routename' => '-',
+        'description' => '-'
+      ],
+      [
+        'menu_id' => 11,
+        'ssm' => 5,
+        'name' => 'transaksi baru',
+        'slug' => 'transaksi-baru',
+        'route' => '-',
+        'active' => '-',
+        'routename' => '-',
+        'description' => '-'
+      ],
+
+      [
+        'menu_id' => 12,
+        'ssm' => 1,
+        'name' => 'data laporan',
+        'slug' => 'data-laporan',
+        'route' => '-',
+        'active' => '-',
+        'routename' => '-',
+        'description' => '-'
+      ],
     ];
 
     foreach ($submenus as $submenu) {
