@@ -39,6 +39,9 @@ class MenuIcon
 
       // PUBLISHED
       'statuses' => 'statuses.jpg',
+
+      // POINT OF SALES
+      'categories' => 'categories.png'
     ];
 
     $filename = $icons[strtolower($name)] ?? '';

@@ -110,6 +110,14 @@ class RoleHasPermissionSeeder extends Seeder
         'statuses.edit',
         'statuses.update',
         'statuses.destroy',
+
+        'categories.index',
+        'categories.create',
+        'categories.store',
+        'categories.show',
+        'categories.edit',
+        'categories.update',
+        'categories.destroy',
       ],
 
       'superadmin' => [
@@ -197,6 +205,14 @@ class RoleHasPermissionSeeder extends Seeder
         'statuses.edit',
         'statuses.update',
         'statuses.destroy',
+
+        'categories.index',
+        'categories.create',
+        'categories.store',
+        'categories.show',
+        'categories.edit',
+        'categories.update',
+        'categories.destroy',
       ],
 
       'admin' => [
@@ -284,6 +300,14 @@ class RoleHasPermissionSeeder extends Seeder
         // 'statuses.edit',
         // 'statuses.update',
         // 'statuses.destroy',
+
+        // 'categories.index',
+        // 'categories.create',
+        // 'categories.store',
+        // 'categories.show',
+        // 'categories.edit',
+        // 'categories.update',
+        // 'categories.destroy',
       ],
 
       'member' => [
@@ -371,6 +395,14 @@ class RoleHasPermissionSeeder extends Seeder
         // 'statuses.edit',
         // 'statuses.update',
         // 'statuses.destroy',
+
+        // 'categories.index',
+        // 'categories.create',
+        // 'categories.store',
+        // 'categories.show',
+        // 'categories.edit',
+        // 'categories.update',
+        // 'categories.destroy',
       ],
     ];
 
