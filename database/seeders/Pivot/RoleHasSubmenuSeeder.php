@@ -40,6 +40,22 @@ class RoleHasSubmenuSeeder extends Seeder
 
       // PUBLISHED
       'statuses',
+
+      // POINT OF SALES
+      'categories',
+      'products',
+      'members',
+      'suppliers',
+
+      // TRANSACTION
+      'pengeluaran',
+      'pembelian',
+      'penjualan',
+      'transaksi lama',
+      'transaksi baru',
+
+      // REPORT
+      'laporan',
     ])->get()->keyBy('name');
 
     $roleHasSubmenus = [
@@ -66,6 +82,22 @@ class RoleHasSubmenuSeeder extends Seeder
 
         // PUBLISHED
         'statuses',
+
+        // POINT OF SALES
+        'categories',
+        'products',
+        'members',
+        'suppliers',
+
+        // TRANSACTION
+        'pengeluaran',
+        'pembelian',
+        'penjualan',
+        'transaksi lama',
+        'transaksi baru',
+
+        // REPORT
+        'laporan',
       ],
 
       'superadmin' => [
@@ -91,6 +123,22 @@ class RoleHasSubmenuSeeder extends Seeder
 
         // PUBLISHED
         'statuses',
+
+        // POINT OF SALES
+        'categories',
+        'products',
+        'members',
+        'suppliers',
+
+        // TRANSACTION
+        'pengeluaran',
+        'pembelian',
+        'penjualan',
+        'transaksi lama',
+        'transaksi baru',
+
+        // REPORT
+        'laporan',
       ],
 
       'admin' => [
@@ -116,6 +164,22 @@ class RoleHasSubmenuSeeder extends Seeder
 
         // PUBLISHED
         // 'statuses',
+
+        // POINT OF SALES
+        // 'categories',
+        // 'products',
+        // 'members',
+        // 'suppliers',
+
+        // TRANSACTION
+        // 'pengeluaran',
+        // 'pembelian',
+        // 'penjualan',
+        // 'transaksi lama',
+        // 'transaksi baru',
+
+        // REPORT
+        // 'laporan',
       ],
 
       'member' => [
@@ -141,6 +205,22 @@ class RoleHasSubmenuSeeder extends Seeder
 
         // PUBLISHED
         // 'statuses',
+
+        // POINT OF SALES
+        // 'categories',
+        // 'products',
+        // 'members',
+        // 'suppliers',
+
+        // TRANSACTION
+        // 'pengeluaran',
+        // 'pembelian',
+        // 'penjualan',
+        // 'transaksi lama',
+        // 'transaksi baru',
+
+        // REPORT
+        // 'laporan',
       ],
     ];
 

@@ -67,10 +67,31 @@ class MenuSeeder extends Seeder
       ],
 
       [
-        'sm' => 8,
+        'sm' => 9,
         'name' => 'published',
         'slug' => 'published',
         'description' => 'menu pengelolaan data publish'
+      ],
+
+      [
+        'sm' => 10,
+        'name' => 'pointofsales',
+        'slug' => 'pointofsales',
+        'description' => 'menu pengelolaan data pos'
+      ],
+
+      [
+        'sm' => 11,
+        'name' => 'transaction',
+        'slug' => 'transaction',
+        'description' => 'menu pengelolaan data transaksi'
+      ],
+
+      [
+        'sm' => 12,
+        'name' => 'report',
+        'slug' => 'report',
+        'description' => 'menu pengelolaan data laporan'
       ],
     ];
 
